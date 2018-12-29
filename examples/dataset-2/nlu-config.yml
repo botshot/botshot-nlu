@@ -1,0 +1,8 @@
+sources:
+  - examples.txt
+  - expressions-1.json
+entities:
+  intent:
+    model: botshot_nlu.intent.neural_net_model.NeuralNetModel
+    tokenizer: botshot_nlu.tokenizer.whitespace.WhitespaceTokenizer
+    featurizer: botshot_nlu.pipeline.featurizer.BagOfWordsFeaturizer
