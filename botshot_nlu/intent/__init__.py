@@ -24,6 +24,10 @@ class IntentModel(ABC):
     def test(self, dataset: IntentDataset) -> Metrics:
         raise NotImplementedError()
 
+    @abstractmethod
+    def unload(self):
+        raise NotImplementedError()
+
     @classmethod
     def load(cls, from_path: str):
         IntentModel._verify_path(from_path)

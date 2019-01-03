@@ -1,5 +1,5 @@
 sources:
-  - examples.txt
+#  - examples.txt
   - expressions-1.json
 entities:
   intent:

@@ -44,12 +44,12 @@ class TrainingHelper:
     def _get_intent_model_dataset(self):
         intent_config = self.config["entities"]['intent']
 
-        tokenizer = create_class_instance(intent_config.get('tokenizer'))
-        featurizer = create_class_instance(intent_config.get('featurizer'))
+        tokenizer = create_class_instance(intent_config.get('tokenizer'), config=intent_config)
+        featurizer = create_class_instance(intent_config.get('featurizer'), config=intent_config)
         pipeline = Pipeline(tokenizer=tokenizer, featurizer=featurizer)
 
         dataset = IntentDataset(data_pairs=as_intent_pairs(self.data))
-        model = create_class_instance(intent_config.get('model'), pipeline=pipeline)  # type: IntentModel
+        model = create_class_instance(intent_config.get('model'), config=intent_config, pipeline=pipeline)  # type: IntentModel
 
         return model, dataset
 
@@ -62,6 +62,7 @@ class TrainingHelper:
         metrics = model.train(dataset)
         if self.save_path:
             model.save(self.save_path)
+        model.unload()
 
     def cross_validate_intent(self, model, dataset, k=10):
         print("Starting %d-fold cross validation" % k)
