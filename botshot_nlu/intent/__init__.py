@@ -35,6 +35,10 @@ class IntentModel(ABC):
     def save(self, to_path: str):
         self._verify_path(to_path)
 
+    @abstractmethod
+    def predict(self, input):
+        raise NotImplementedError()
+
     @classmethod
     def _verify_path(self, path: str):
         if path is None:

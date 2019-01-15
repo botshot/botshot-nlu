@@ -1,7 +1,8 @@
 import argparse
 import os
+import sys
 
-from botshot_nlu.config import TrainingHelper, read_training_config
+from botshot_nlu.config import TrainingHelper, read_training_config, ParseHelper
 
 
 def start_training(args):
@@ -15,7 +16,11 @@ def start_training(args):
 
 
 def start_parse(args):
-    pass
+    config = read_training_config(args.config)
+    helper = ParseHelper.load(args.model_path)
+    print("Enter query: (exit with Ctrl+D)")
+    for line in sys.stdin:
+        helper.parse([line])
 
 
 def main():

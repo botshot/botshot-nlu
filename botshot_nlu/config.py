@@ -16,8 +16,8 @@ class TrainingHelper:
             raise Exception("Config must be a dict")
         if not save_path:
             print("Warning: Save path not provided, model won't be saved!")
-        elif os.path.exists(save_path) and not os.path.isdir(save_path):
-            raise Exception("Save path {} already exists and isn't a directory".format(save_path))
+        elif os.path.exists(save_path):
+            raise Exception("Save path {} already exists!".format(save_path))
 
         self.config = config
         self.entities = entities or list(self.config.get("entities", {}).keys())
@@ -51,22 +51,28 @@ class TrainingHelper:
         dataset = IntentDataset(data_pairs=as_intent_pairs(self.data))
         model = create_class_instance(intent_config.get('model'), config=intent_config, pipeline=pipeline)  # type: IntentModel
 
-        return model, dataset
+        return pipeline, model, dataset
 
     def train_intent(self):
         print("Training intent")
-        model, dataset = self._get_intent_model_dataset()
+        pipeline, model, dataset = self._get_intent_model_dataset()
         if self.crossvalidate:
             self.cross_validate_intent(model, dataset)
             input('Press enter to continue')
         metrics = model.train(dataset)
         if self.save_path:
-            model.save(self.save_path)
+            os.makedirs(self.save_path)
+            with open(os.path.join(self.save_path, "config.yml"), "w") as fp:
+                yaml.dump(self.config, fp)
+            model.save(os.path.join(self.save_path, "intent"))
+            with open(os.path.join(self.save_path, "pipeline.yml"), "w") as fp:
+                pipeline_data = pipeline.save()
+                yaml.dump({"pipelines": {"intent": pipeline_data}}, fp)
         model.unload()
 
     def cross_validate_intent(self, model, dataset, k=10):
         print("Starting %d-fold cross validation" % k)
-        model, dataset = self._get_intent_model_dataset()
+        pipeline, model, dataset = self._get_intent_model_dataset()
         accuracies = []
 
         for _ in range(k):
@@ -87,3 +93,36 @@ def read_training_config(filename):
     with open(filename) as fp:
         config = yaml.safe_load(fp)
     return config
+
+
+class ParseHelper:
+
+    def __init__(self, config, models):
+        self.config = config
+        self.models = models
+    
+    @staticmethod
+    def load(model_path):
+        with open(os.path.join(model_path, "config.yml")) as fp:
+            config = yaml.safe_load(fp)
+        with open(os.path.join(model_path, "pipeline.yml")) as fp:
+            pipeline_data = yaml.safe_load(fp)
+
+        models = []
+        for entity in config["entities"]:
+            entity_config = config['entities'][entity]
+            tokenizer = create_class_instance(entity_config.get('tokenizer'), config=entity_config)
+            featurizer = create_class_instance(entity_config.get('featurizer'), config=entity_config)
+            pipeline = Pipeline(tokenizer=tokenizer, featurizer=featurizer)
+            pipeline.load(pipeline_data['pipelines'][entity])
+            model = create_class_instance(entity_config.get('model'), config=entity_config, pipeline=pipeline)  # type: IntentModel
+            model.load(os.path.join(model_path, entity))
+            print(model)
+            models.append(model)
+        
+        return ParseHelper(config, models)
+
+    def parse(self, text):
+        for model in self.models:
+            result = model.predict(text)
+            print(result)

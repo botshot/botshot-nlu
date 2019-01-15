@@ -46,10 +46,33 @@ class Pipeline:
         self.i2l = list(set(y))
         self.l2i = {label:index for index, label in enumerate(self.i2l)}
 
-    def transform(self, x, y):
+    def transform(self, x, y=None):
         x = self.featurizer.transform(self.tokenizer.transform(x))
-        y = [self.l2i[y_] for y_ in y]
-        return x, y
+        if y is not None:
+            y = self.encode_labels(y)
+            return x, y
+        else:
+            return x
+
+    def encode_labels(self, y):
+        return [self.l2i[y_] for y_ in y]
+
+    def decode_labels(self, y):
+        return [self.i2l[y_] for y_ in y]
 
     def feature_dim(self):
         return self.featurizer.feature_dim()
+
+    def save(self) -> dict:
+        data = {}
+        data['tokenizer'] = self.tokenizer.save()
+        data['featurizer'] = self.featurizer.save()
+        data['i2l'] = self.i2l
+        data['l2i'] = self.l2i
+        return data
+
+    def load(self, data):
+        self.tokenizer.load(data.get("tokenizer"))
+        self.featurizer.load(data.get("featurizer"))
+        self.i2l = data['i2l']
+        self.l2i = data['l2i']

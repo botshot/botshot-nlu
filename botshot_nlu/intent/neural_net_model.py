@@ -1,5 +1,8 @@
-import tensorflow as tf
+import os
+import numpy as np
 
+import tensorflow as tf
+from tensorflow.saved_model import simple_save, tag_constants
 
 from botshot_nlu.dataset.intent import IntentDataset, BatchMode
 from botshot_nlu.intent import IntentModel, Metrics
@@ -59,7 +62,7 @@ class NeuralNetModel(IntentModel):
     def train(self, dataset: IntentDataset) -> Metrics:
         self.unload()
         self.pipeline.fit(*dataset.get_all())
-        session = self._get_session()        
+        session = self._get_session()
 
         batch_size = self.config.get("batch_size", 16)        
         max_steps = self.config.get("max_steps", 100000)
@@ -68,11 +71,11 @@ class NeuralNetModel(IntentModel):
 
         with session.graph.as_default():
             self._load(self.pipeline.feature_dim(), dataset.label_count())
-
             self._load_training(batch_size)
 
             self.session.run(tf.global_variables_initializer())
             self.session.run(tf.local_variables_initializer())
+            self.saver = tf.train.Saver()
 
         if dataset.count() < batch_size:
             raise Exception(
@@ -147,5 +150,56 @@ class NeuralNetModel(IntentModel):
             # TODO: remove variables from class
 
     def save(self, path: str):
+
+        if not hasattr(self, 'session') or self.session is None:
+            raise Exception("Session is None, have you called train() ?")
+        
         super().save(path)
-        # TODO
+        model_dir = os.path.join(path, "intent")
+        if os.path.exists(model_dir):
+            for filename in os.listdir(model_dir):
+                os.remove(os.path.join(model_dir, filename))
+            os.removedirs(model_dir)
+        #os.makedirs(model_dir, exist_ok=True)
+
+        x_info = tf.saved_model.utils.build_tensor_info(self.placeholder_x)
+        y_info = tf.saved_model.utils.build_tensor_info(self.predicted_labels)
+
+        prediction_signature = tf.saved_model.signature_def_utils.build_signature_def(
+            inputs={'x': x_info},
+            outputs={'y': y_info},
+            method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME
+        )
+
+        builder = tf.saved_model.builder.SavedModelBuilder(model_dir)
+
+        with self.session.graph.as_default():
+            builder.add_meta_graph_and_variables(
+                self.session, [tag_constants.SERVING], 
+                {tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY: prediction_signature},
+                strip_default_attrs=True
+            )
+        builder.save(as_text=True)
+
+    def load(self, path: str):
+        model_dir = os.path.join(path, "intent")
+        session = self._get_session()
+        graph_def = tf.saved_model.loader.load(session, [tag_constants.SERVING], model_dir)
+        signature = graph_def.signature_def
+        
+        signature_key = tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY
+        x_name = signature[signature_key].inputs['x'].name
+        y_name = signature[signature_key].outputs['y'].name
+
+        # print(session.graph.get_operations())
+        self.placeholder_x = session.graph.get_tensor_by_name(x_name)
+        self.predicted_labels = session.graph.get_tensor_by_name(y_name)
+
+    def predict(self, input):
+        input = self.pipeline.transform(input)
+        labels = self.session.run(self.predicted_labels, feed_dict={self.placeholder_x: input})
+        print(labels)
+        return self.pipeline.decode_labels(labels)
+#        max, argmax = np.max(labels), np.argmax(labels)
+#        if max > 0.:
+#            return self.pipeline.decode_labels([argmax])
