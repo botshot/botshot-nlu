@@ -1,0 +1,28 @@
+@greeting             # intent for following sentences, until next @xyz
+Hello, world!
+Hi, how are you?
+Hello there :)
+\@hello               # escaped @ in the beginning of sentence
+
+@bye Goodbye!         # intent for this sentence only
+@bye See you later.
+
+Hi.
+
+@none                 # special "none" intent
+bla bla
+whatever
+foo
+negative sample
+
+@search:places        # compound intent
+I'm looking for a <place>restaurant</place> <location>in the city center</location>.
+I'm looking for a <price_range>cheap</price_range> <place>restaurant</place>.
+#I'm looking for a <place/>.  # predefined entity
+
+@navigation           # entity roles
+How do I get from <location:from>Dejvice</location:from> to <location:to>the center</location:to>?
+#How do I get <!place>there</place>?  # TODO: retrieve from context
+
+@react that's \#sad          # escape comment
+

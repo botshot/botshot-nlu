@@ -1,0 +1,34 @@
+entities:
+  
+  course:  # you could try and build regex using the examples
+  - BI-PA1
+  - BI-PA2
+  - BI-PAI
+  
+  city:  # here, you can specify more expressions (synonyms)
+  - Prague:
+    - Praha
+    - Prague
+    - Praga
+  - Ruzomberok:
+    - Ruzomberok
+    - RK
+    - RBK
+    - Roszahet # po uhorsky
+
+  fruit:
+  - apple
+  - banana
+  - pineapple
+  - pear
+  
+  color:  # 1-NN embedding is not useful here since it will return all the colors
+  - yellow
+  - green
+  - blue
+  - red
+
+  place:
+  - charles bridge
+  - powder gate
+  - wenceslas square

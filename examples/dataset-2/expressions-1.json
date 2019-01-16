@@ -1,0 +1,6147 @@
+{
+    "data": [
+        {
+            "text": "metro from ikikik to ololol",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"ikikik\"",
+                    "role": "address_from",
+                    "start": 11,
+                    "end": 17
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "transport_type",
+                    "value": "\"public\"",
+                    "start": 0,
+                    "end": 5
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ololol\"",
+                    "role": "address_to",
+                    "start": 21,
+                    "end": 27
+                }
+            ]
+        },
+        {
+            "text": "university",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"university\""
+                }
+            ]
+        },
+        {
+            "text": "night clubs",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"night club\""
+                }
+            ]
+        },
+        {
+            "text": "parties at hioaghioahs",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"hioaghioahs\"",
+                    "start": 11,
+                    "end": 22
+                },
+                {
+                    "entity": "query",
+                    "value": "\"party\"",
+                    "start": 0,
+                    "end": 7
+                }
+            ]
+        },
+        {
+            "text": "play",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"play\""
+                }
+            ]
+        },
+        {
+            "text": "subway from rfrfrf to tgtgtg",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"tgtgtg\"",
+                    "role": "address_to",
+                    "start": 22,
+                    "end": 28
+                },
+                {
+                    "entity": "address",
+                    "value": "\"rfrfrf\"",
+                    "role": "address_from",
+                    "start": 12,
+                    "end": 18
+                },
+                {
+                    "entity": "transport_type",
+                    "value": "\"public\"",
+                    "start": 0,
+                    "end": 6
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "night club",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"night club\""
+                }
+            ]
+        },
+        {
+            "text": "cool",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "Tell me more about your name",
+            "entities": []
+        },
+        {
+            "text": "how are you?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_how_are_you\""
+                }
+            ]
+        },
+        {
+            "text": "insurance agencies",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"insurance agency\""
+                }
+            ]
+        },
+        {
+            "text": "forecast",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                }
+            ]
+        },
+        {
+            "text": "that's great!",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "meal takeaway",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"meal takeaway\""
+                }
+            ]
+        },
+        {
+            "text": "sup",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_whats_up\""
+                }
+            ]
+        },
+        {
+            "text": "250 czk in euros",
+            "entities": [
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "role": "currency_to",
+                    "start": 11,
+                    "end": 15
+                },
+                {
+                    "entity": "number",
+                    "value": "250",
+                    "role": "number_from",
+                    "start": 0,
+                    "end": 3
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_from",
+                    "start": 4,
+                    "end": 7
+                }
+            ]
+        },
+        {
+            "text": "fuck off",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_swear\""
+                }
+            ]
+        },
+        {
+            "text": "shoe store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"shoe store\""
+                }
+            ]
+        },
+        {
+            "text": "exchange rate to czech crowns",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"exchange\"",
+                    "start": 0,
+                    "end": 13
+                }
+            ]
+        },
+        {
+            "text": "transport from ghi jkl to fgh qwe",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"fgh qwe\"",
+                    "role": "address_to",
+                    "start": 26,
+                    "end": 33
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ghi jkl\"",
+                    "role": "address_from",
+                    "start": 15,
+                    "end": 22
+                }
+            ]
+        },
+        {
+            "text": "car washes",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"car wash\""
+                }
+            ]
+        },
+        {
+            "text": "fire stations",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"fire station\""
+                }
+            ]
+        },
+        {
+            "text": "from Mustek to Karlovo namesti",
+            "entities": []
+        },
+        {
+            "text": "it doesn't matter",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"never_mind\""
+                }
+            ]
+        },
+        {
+            "text": "tell me something funny",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_joke\""
+                }
+            ]
+        },
+        {
+            "text": "hardware stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"hardware store\""
+                }
+            ]
+        },
+        {
+            "text": "roofing contractors",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"roofing contractor\""
+                }
+            ]
+        },
+        {
+            "text": "Celsius",
+            "entities": [
+                {
+                    "entity": "temperature_unit",
+                    "value": "\"C\"",
+                    "start": 0,
+                    "end": 7
+                }
+            ]
+        },
+        {
+            "text": "from A to B",
+            "entities": []
+        },
+        {
+            "text": "what's up tonight?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"recommend\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-08-22T18:00:00.000+02:00\",\"to\":\"2016-08-23T00:00:00.000+02:00\"}",
+                    "start": 10,
+                    "end": 17
+                }
+            ]
+        },
+        {
+            "text": "how to get to ABC",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"ABC\"",
+                    "role": "address_to",
+                    "start": 14,
+                    "end": 17
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "go to hell",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_swear\""
+                }
+            ]
+        },
+        {
+            "text": "transport from ABC to GHI",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ABC\"",
+                    "role": "address_from",
+                    "start": 15,
+                    "end": 18
+                },
+                {
+                    "entity": "address",
+                    "value": "\"GHI\"",
+                    "role": "address_to",
+                    "start": 22,
+                    "end": 25
+                }
+            ]
+        },
+        {
+            "text": "near asdihofiho",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"asdihofiho\"",
+                    "start": 5,
+                    "end": 15
+                }
+            ]
+        },
+        {
+            "text": "shopping malls",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"shopping mall\""
+                }
+            ]
+        },
+        {
+            "text": "near my location",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "how to say hello in czech",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"translate\""
+                }
+            ]
+        },
+        {
+            "text": "is it going to rain tomorrow?",
+            "entities": [
+                {
+                    "entity": "weather_question",
+                    "value": "\"rain\"",
+                    "start": 15,
+                    "end": 19
+                },
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-09-21T00:00:00.000+02:00\"",
+                    "start": 20,
+                    "end": 28
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                }
+            ]
+        },
+        {
+            "text": "subway stations",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"subway station\""
+                }
+            ]
+        },
+        {
+            "text": "bar",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"bar\""
+                }
+            ]
+        },
+        {
+            "text": "bus to oaisjdoij",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"oaisjdoij\"",
+                    "role": "address_to",
+                    "start": 7,
+                    "end": 16
+                },
+                {
+                    "entity": "transport_type",
+                    "value": "\"public\"",
+                    "start": 0,
+                    "end": 3
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "what's happening in prague",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "thanks a lot",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "200 czk to eur",
+            "entities": [
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_from",
+                    "start": 4,
+                    "end": 7
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "role": "currency_to",
+                    "start": 11,
+                    "end": 14
+                },
+                {
+                    "entity": "number",
+                    "value": "\"200\"",
+                    "role": "number_from",
+                    "start": 0,
+                    "end": 3
+                }
+            ]
+        },
+        {
+            "text": "hello!",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"greeting\""
+                }
+            ]
+        },
+        {
+            "text": "spas",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"spa\""
+                }
+            ]
+        },
+        {
+            "text": "how much is 50 czk",
+            "entities": [
+                {
+                    "entity": "number",
+                    "value": "50",
+                    "start": 12,
+                    "end": 14
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"how_much\"",
+                    "start": 0,
+                    "end": 8
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "start": 15,
+                    "end": 18
+                }
+            ]
+        },
+        {
+            "text": "150 euros to crowns",
+            "entities": [
+                {
+                    "entity": "number",
+                    "value": "150",
+                    "role": "number_from",
+                    "start": 0,
+                    "end": 3
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "role": "currency_from",
+                    "start": 4,
+                    "end": 9
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_to",
+                    "start": 13,
+                    "end": 19
+                }
+            ]
+        },
+        {
+            "text": "embassies",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"embassy\""
+                }
+            ]
+        },
+        {
+            "text": "Tell me more about you Travis",
+            "entities": []
+        },
+        {
+            "text": "nightlife",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"party\""
+                }
+            ]
+        },
+        {
+            "text": "gyms",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"gym\""
+                }
+            ]
+        },
+        {
+            "text": "drink spots",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"drink spot\""
+                }
+            ]
+        },
+        {
+            "text": "exhibitions near me",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"exhibition\"",
+                    "start": 0,
+                    "end": 11
+                }
+            ]
+        },
+        {
+            "text": "experimental",
+            "entities": [
+                {
+                    "entity": "tag",
+                    "value": "\"experimental\"",
+                    "start": 0,
+                    "end": 12
+                }
+            ]
+        },
+        {
+            "text": "all exhibitions",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"exhibition\"",
+                    "start": 4,
+                    "end": 15
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "recommend concert",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 10,
+                    "end": 17
+                }
+            ]
+        },
+        {
+            "text": "my plan",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"likes\""
+                }
+            ]
+        },
+        {
+            "text": "old town",
+            "entities": []
+        },
+        {
+            "text": "how to get to abc from def",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"DEF\"",
+                    "role": "address_from",
+                    "start": 23,
+                    "end": 26
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ABC\"",
+                    "role": "address_to",
+                    "start": 14,
+                    "end": 17
+                }
+            ]
+        },
+        {
+            "text": "add to likes",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"add_to_likes\""
+                }
+            ]
+        },
+        {
+            "text": "funeral homes",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"funeral home\""
+                }
+            ]
+        },
+        {
+            "text": "I'm so hungry",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_hungry\""
+                }
+            ]
+        },
+        {
+            "text": "ahoj",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"greeting\""
+                }
+            ]
+        },
+        {
+            "text": "clubs in oimaosdi",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"oimaosdi\"",
+                    "start": 9,
+                    "end": 17
+                },
+                {
+                    "entity": "query",
+                    "value": "\"club\"",
+                    "start": 0,
+                    "end": 5
+                }
+            ]
+        },
+        {
+            "text": "funeral home",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"funeral home\""
+                }
+            ]
+        },
+        {
+            "text": "bicycle store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"bicycle store\""
+                }
+            ]
+        },
+        {
+            "text": "how much is 20 euros",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"how_much\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "festival",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"festival\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "I'm bored",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_bored\""
+                }
+            ]
+        },
+        {
+            "text": "police offices",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"police office\""
+                }
+            ]
+        },
+        {
+            "text": "how to say cheers in czech",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"translate\""
+                }
+            ]
+        },
+        {
+            "text": "You can do nothing with that...Deal with it...",
+            "entities": []
+        },
+        {
+            "text": "restaurant at pfojapsfjo",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"pfojapsfjo\"",
+                    "start": 14,
+                    "end": 24
+                },
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\"",
+                    "start": 0,
+                    "end": 10
+                }
+            ]
+        },
+        {
+            "text": "topPicks",
+            "entities": []
+        },
+        {
+            "text": "100 CZK to GBP",
+            "entities": [
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_from",
+                    "start": 4,
+                    "end": 7
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"GBP\"",
+                    "role": "currency_to",
+                    "start": 11,
+                    "end": 14
+                },
+                {
+                    "entity": "number",
+                    "value": "100",
+                    "role": "number_from",
+                    "start": 0,
+                    "end": 3
+                }
+            ]
+        },
+        {
+            "text": "im hungry",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_hungry\""
+                }
+            ]
+        },
+        {
+            "text": "park",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"park\""
+                }
+            ]
+        },
+        {
+            "text": "Great!",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "dentist",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"dentist\""
+                }
+            ]
+        },
+        {
+            "text": "free events near me",
+            "entities": [
+                {
+                    "entity": "tag",
+                    "value": "\"free\"",
+                    "start": 0,
+                    "end": 4
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "Add to my plan",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"add_to_likes\""
+                }
+            ]
+        },
+        {
+            "text": "will it snow tonight?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-09-20T18:00:00.000+02:00\",\"to\":\"2016-09-21T00:00:00.000+02:00\"}",
+                    "start": 13,
+                    "end": 20
+                }
+            ]
+        },
+        {
+            "text": "nope",
+            "entities": [
+                {
+                    "entity": "yes_no",
+                    "value": "\"no\""
+                }
+            ]
+        },
+        {
+            "text": "transport to uoihioh sihfoi from ijdo adspp",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"ijdo adspp\"",
+                    "role": "address_from",
+                    "start": 33,
+                    "end": 43
+                },
+                {
+                    "entity": "address",
+                    "value": "\"uoihioh sihfoi\"",
+                    "role": "address_to",
+                    "start": 13,
+                    "end": 27
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "I accept, let's go!",
+            "entities": [
+                {
+                    "entity": "submit",
+                    "value": "\"submit\""
+                }
+            ]
+        },
+        {
+            "text": "Travis?",
+            "entities": []
+        },
+        {
+            "text": "jewelry stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"jewelry store\""
+                }
+            ]
+        },
+        {
+            "text": "city center",
+            "entities": []
+        },
+        {
+            "text": "meal delivery",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"meal delivery\""
+                }
+            ]
+        },
+        {
+            "text": "go fuck yourself",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"swear\""
+                }
+            ]
+        },
+        {
+            "text": "from Karlovo namesti to Dejvicka",
+            "entities": []
+        },
+        {
+            "text": "Turn off all the computers",
+            "entities": []
+        },
+        {
+            "text": "888 dollars to czk",
+            "entities": [
+                {
+                    "entity": "number",
+                    "value": "888",
+                    "role": "number_from",
+                    "start": 0,
+                    "end": 3
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"USD\"",
+                    "role": "currency_from",
+                    "start": 4,
+                    "end": 10
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_to",
+                    "start": 15,
+                    "end": 18
+                }
+            ]
+        },
+        {
+            "text": "old town square",
+            "entities": []
+        },
+        {
+            "text": "clothing store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"clothing store\""
+                }
+            ]
+        },
+        {
+            "text": "what's the exchange rate",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"exchange\""
+                }
+            ]
+        },
+        {
+            "text": "drinks",
+            "entities": []
+        },
+        {
+            "text": "cemeteries",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"cemetery\""
+                }
+            ]
+        },
+        {
+            "text": "free events",
+            "entities": [
+                {
+                    "entity": "tag",
+                    "value": "\"free\"",
+                    "start": 0,
+                    "end": 4
+                }
+            ]
+        },
+        {
+            "text": "souvenir",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"local shop\""
+                }
+            ]
+        },
+        {
+            "text": "add to my likes",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"add_to_likes\""
+                }
+            ]
+        },
+        {
+            "text": "post offices",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"post office\""
+                }
+            ]
+        },
+        {
+            "text": "whats the weather gonna be in prague during weekend?",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-11-04T18:00:00.000+01:00\",\"to\":\"2016-11-07T00:00:00.000+01:00\"}",
+                    "start": 44,
+                    "end": 51
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                }
+            ]
+        },
+        {
+            "text": "show next page",
+            "entities": []
+        },
+        {
+            "text": "libraries",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"library\""
+                }
+            ]
+        },
+        {
+            "text": "sight",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"sight\""
+                }
+            ]
+        },
+        {
+            "text": "fire station",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"fire station\""
+                }
+            ]
+        },
+        {
+            "text": "plumbers",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"plumber\""
+                }
+            ]
+        },
+        {
+            "text": "recommend me a restaurant",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\"",
+                    "start": 15,
+                    "end": 25
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "courthouse",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"courthouse\""
+                }
+            ]
+        },
+        {
+            "text": "shows",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\""
+                }
+            ]
+        },
+        {
+            "text": "\u010dau",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"greeting\""
+                }
+            ]
+        },
+        {
+            "text": "Fahrenheit",
+            "entities": [
+                {
+                    "entity": "temperature_unit",
+                    "value": "\"F\"",
+                    "start": 0,
+                    "end": 10
+                }
+            ]
+        },
+        {
+            "text": "moving companies",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"moving company\""
+                }
+            ]
+        },
+        {
+            "text": "near ioajsdoioij",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"ioajsdoioij\"",
+                    "start": 5,
+                    "end": 16
+                }
+            ]
+        },
+        {
+            "text": "concerts near me",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "show my likes",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"likes\""
+                }
+            ]
+        },
+        {
+            "text": "concerts near ojapfjopojfp",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"ojapfjopojfp\"",
+                    "start": 14,
+                    "end": 26
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "parks",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"park\""
+                }
+            ]
+        },
+        {
+            "text": "synagogue",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"synagogue\""
+                }
+            ]
+        },
+        {
+            "text": "im bored",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_bored\""
+                }
+            ]
+        },
+        {
+            "text": "insurance agency",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"insurance agency\""
+                }
+            ]
+        },
+        {
+            "text": "who created you?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_who_are_you\""
+                }
+            ]
+        },
+        {
+            "text": "concerts near FIAJOSF",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"FIAJOSF\"",
+                    "start": 14,
+                    "end": 21
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "plays",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"play\""
+                }
+            ]
+        },
+        {
+            "text": "What is name Travis?",
+            "entities": []
+        },
+        {
+            "text": "where can I eat around ogihaoihagoi",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"ogihaoihagoi\"",
+                    "start": 23,
+                    "end": 35
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "search_question",
+                    "value": "\"where\"",
+                    "start": 0,
+                    "end": 5
+                }
+            ]
+        },
+        {
+            "text": "Hi man",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"greeting\""
+                }
+            ]
+        },
+        {
+            "text": "concerts in PAOSKDPOK",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"PAOSKDPOK\"",
+                    "start": 12,
+                    "end": 21
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "parties at IJAOSIJFOIJ",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"IJAOSIJFOIJ\"",
+                    "start": 11,
+                    "end": 22
+                },
+                {
+                    "entity": "query",
+                    "value": "\"party\"",
+                    "start": 0,
+                    "end": 7
+                }
+            ]
+        },
+        {
+            "text": "50 koruna",
+            "entities": []
+        },
+        {
+            "text": "shut up",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_swear\""
+                }
+            ]
+        },
+        {
+            "text": "concert in oiajofjioaf",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"oiajofjioaf\"",
+                    "start": 11,
+                    "end": 22
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 7
+                }
+            ]
+        },
+        {
+            "text": "what's going on today",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-11-23T00:00:00.000+01:00\"",
+                    "start": 13,
+                    "end": 21
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "concert in ifhoi iasf 79",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"ifhoi iasf 79\"",
+                    "start": 11,
+                    "end": 24
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 7
+                }
+            ]
+        },
+        {
+            "text": "Awesome!",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "beauty salon",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"beauty salon\""
+                }
+            ]
+        },
+        {
+            "text": "convert from euro",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"exchange\""
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "start": 13,
+                    "end": 17
+                }
+            ]
+        },
+        {
+            "text": "how to get from ppp vvv to lll rrr",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"lll rrr\"",
+                    "role": "address_to",
+                    "start": 27,
+                    "end": 34
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ppp vvv\"",
+                    "role": "address_from",
+                    "start": 16,
+                    "end": 23
+                }
+            ]
+        },
+        {
+            "text": "tour guides",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"tour guide\""
+                }
+            ]
+        },
+        {
+            "text": "bus from dcdcdcdc cdcd to vfvfvf fvfv",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "transport_type",
+                    "value": "\"public\"",
+                    "start": 0,
+                    "end": 3
+                },
+                {
+                    "entity": "address",
+                    "value": "\"vfvfvf fvfv\"",
+                    "role": "address_to",
+                    "start": 26,
+                    "end": 37
+                },
+                {
+                    "entity": "address",
+                    "value": "\"dcdcdcdc cdcd\"",
+                    "role": "address_from",
+                    "start": 9,
+                    "end": 22
+                }
+            ]
+        },
+        {
+            "text": "restaurants near me",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\"",
+                    "start": 0,
+                    "end": 11
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "cemetery",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"cemetery\""
+                }
+            ]
+        },
+        {
+            "text": "in 5 hours",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2017-05-21T01:28:00.000+02:00\"",
+                    "start": 0,
+                    "end": 10
+                }
+            ]
+        },
+        {
+            "text": "how to say hi in czech",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"translate\""
+                }
+            ]
+        },
+        {
+            "text": "parking spots",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"parking\""
+                }
+            ]
+        },
+        {
+            "text": "electricians",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"electrician\""
+                }
+            ]
+        },
+        {
+            "text": "celsius",
+            "entities": []
+        },
+        {
+            "text": "taxi to ashoiahdso",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "transport_type",
+                    "value": "\"taxi\"",
+                    "start": 0,
+                    "end": 4
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ashoiahdso\"",
+                    "role": "address_to",
+                    "start": 8,
+                    "end": 18
+                }
+            ]
+        },
+        {
+            "text": "recommend show",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 10,
+                    "end": 14
+                }
+            ]
+        },
+        {
+            "text": "zoos",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"zoo\""
+                }
+            ]
+        },
+        {
+            "text": "who about a movie",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 12,
+                    "end": 17
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "about_question",
+                    "value": "\"who\"",
+                    "start": 0,
+                    "end": 3
+                }
+            ]
+        },
+        {
+            "text": "what's the weather?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                }
+            ]
+        },
+        {
+            "text": "what's near me?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "bring back home",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"local shop\""
+                }
+            ]
+        },
+        {
+            "text": "and 1000 czk?",
+            "entities": [
+                {
+                    "entity": "number",
+                    "value": "1000",
+                    "start": 4,
+                    "end": 8
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "start": 9,
+                    "end": 12
+                }
+            ]
+        },
+        {
+            "text": "yeah",
+            "entities": [
+                {
+                    "entity": "yes_no",
+                    "value": "\"yes\""
+                }
+            ]
+        },
+        {
+            "text": "hospitals",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"hospital\""
+                }
+            ]
+        },
+        {
+            "text": "recommend me a film",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 15,
+                    "end": 19
+                }
+            ]
+        },
+        {
+            "text": "supper",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\""
+                }
+            ]
+        },
+        {
+            "text": "recommend me a movie and concert",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 25,
+                    "end": 32
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 15,
+                    "end": 20
+                }
+            ]
+        },
+        {
+            "text": "events near me",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "police office",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"police office\""
+                }
+            ]
+        },
+        {
+            "text": "storage",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"storage\""
+                }
+            ]
+        },
+        {
+            "text": "bakery",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"bakery\""
+                }
+            ]
+        },
+        {
+            "text": "pet store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"pet store\""
+                }
+            ]
+        },
+        {
+            "text": "bicycle stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"bicycle store\""
+                }
+            ]
+        },
+        {
+            "text": "guide",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"tour guide\""
+                }
+            ]
+        },
+        {
+            "text": "yess",
+            "entities": [
+                {
+                    "entity": "yes_no",
+                    "value": "\"yes\""
+                }
+            ]
+        },
+        {
+            "text": "recommend",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "how to say thank you in czech",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"translate\""
+                }
+            ]
+        },
+        {
+            "text": "hungry",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_hungry\""
+                }
+            ]
+        },
+        {
+            "text": "caf\u00e9",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"caf\u00e9\""
+                }
+            ]
+        },
+        {
+            "text": "pharmacy",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"pharmacy\""
+                }
+            ]
+        },
+        {
+            "text": "Who you are Travis?",
+            "entities": []
+        },
+        {
+            "text": "is there a marketplace?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "what are the best XYZ?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "church",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"church\""
+                }
+            ]
+        },
+        {
+            "text": "what should I do tonight",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-10-04T18:00:00.000+02:00\",\"to\":\"2016-10-05T00:00:00.000+02:00\"}",
+                    "start": 17,
+                    "end": 24
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "parking",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"parking\""
+                }
+            ]
+        },
+        {
+            "text": "how to travel to ABC",
+            "entities": [
+                {
+                    "entity": "tag",
+                    "value": "\"travel\"",
+                    "start": 7,
+                    "end": 13
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "thanks!",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "how to get to hjoiho hiohoi from uhiuiuh uhiuhi",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"uhiuiuh uhiuhi\"",
+                    "role": "address_from",
+                    "start": 33,
+                    "end": 47
+                },
+                {
+                    "entity": "address",
+                    "value": "\"hjoiho hiohoi\"",
+                    "role": "address_to",
+                    "start": 14,
+                    "end": 27
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "never mind",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"never_mind\""
+                }
+            ]
+        },
+        {
+            "text": "tuesday at 6",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2017-05-23T06:00:00.000+02:00\"",
+                    "start": 0,
+                    "end": 12
+                }
+            ]
+        },
+        {
+            "text": "from test",
+            "entities": []
+        },
+        {
+            "text": "bowling alleys",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"bowling alley\""
+                }
+            ]
+        },
+        {
+            "text": "restaurants at pojpgjapo",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"pojpgjapo\"",
+                    "start": 15,
+                    "end": 24
+                },
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\"",
+                    "start": 0,
+                    "end": 11
+                }
+            ]
+        },
+        {
+            "text": "gas station",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"gas station\""
+                }
+            ]
+        },
+        {
+            "text": "exchange office",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"exchange office\""
+                }
+            ]
+        },
+        {
+            "text": "uber from edcedc tgbtgb to rfvrfv ujmujm",
+            "entities": [
+                {
+                    "entity": "transport_type",
+                    "value": "\"uber\"",
+                    "start": 0,
+                    "end": 4
+                },
+                {
+                    "entity": "address",
+                    "value": "\"rfvrfv ujmujm\"",
+                    "role": "address_to",
+                    "start": 27,
+                    "end": 40
+                },
+                {
+                    "entity": "address",
+                    "value": "\"edcedc tgbtgb\"",
+                    "role": "address_from",
+                    "start": 10,
+                    "end": 23
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "jewelry store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"jewelry store\""
+                }
+            ]
+        },
+        {
+            "text": "meal takeaways",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"meal takeaway\""
+                }
+            ]
+        },
+        {
+            "text": "post office",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"post office\""
+                }
+            ]
+        },
+        {
+            "text": "will it rain tomorrow?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                },
+                {
+                    "entity": "weather_question",
+                    "value": "\"rain\"",
+                    "start": 8,
+                    "end": 12
+                },
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-09-21T00:00:00.000+02:00\"",
+                    "start": 13,
+                    "end": 21
+                }
+            ]
+        },
+        {
+            "text": "weather tonight",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "{\"to\":\"2017-10-20T00:00:00.000+02:00\",\"from\":\"2017-10-19T18:00:00.000+02:00\"}",
+                    "start": 8,
+                    "end": 15
+                }
+            ]
+        },
+        {
+            "text": "car rental",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"car rental\""
+                }
+            ]
+        },
+        {
+            "text": "test_item",
+            "entities": []
+        },
+        {
+            "text": "all_events",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"all_events\""
+                }
+            ]
+        },
+        {
+            "text": "how old is ABC",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"about\""
+                },
+                {
+                    "entity": "about_question",
+                    "value": "\"age\"",
+                    "start": 4,
+                    "end": 7
+                }
+            ]
+        },
+        {
+            "text": "Can you recommend me a movie?",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 23,
+                    "end": 28
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "recommend tomorrow morning",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"recommend\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-09-19T04:00:00.000+02:00\",\"to\":\"2016-09-19T12:00:00.000+02:00\"}",
+                    "start": 10,
+                    "end": 26
+                }
+            ]
+        },
+        {
+            "text": "tell me a joke",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_joke\""
+                }
+            ]
+        },
+        {
+            "text": "bring home",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"local shop\""
+                }
+            ]
+        },
+        {
+            "text": "dunno",
+            "entities": [
+                {
+                    "entity": "yes_no",
+                    "value": "\"does_not_know\""
+                }
+            ]
+        },
+        {
+            "text": "book stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"book store\""
+                }
+            ]
+        },
+        {
+            "text": "movie theater",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"movie theater\""
+                }
+            ]
+        },
+        {
+            "text": "concert near ihoiagogiho",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 7
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ihoiagogiho\"",
+                    "start": 13,
+                    "end": 24
+                }
+            ]
+        },
+        {
+            "text": "bars",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"bar\""
+                }
+            ]
+        },
+        {
+            "text": "how much is 100 euros",
+            "entities": [
+                {
+                    "entity": "number",
+                    "value": "\"100\"",
+                    "start": 12,
+                    "end": 15
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"how_much\"",
+                    "start": 0,
+                    "end": 8
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "start": 16,
+                    "end": 20
+                }
+            ]
+        },
+        {
+            "text": "like it",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "Where to go out today?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-12-15T00:00:00.000+01:00\"",
+                    "start": 16,
+                    "end": 21
+                },
+                {
+                    "entity": "search_question",
+                    "value": "\"where\"",
+                    "start": 0,
+                    "end": 5
+                }
+            ]
+        },
+        {
+            "text": "storages",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"storage\""
+                }
+            ]
+        },
+        {
+            "text": "parties near me",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"party\"",
+                    "start": 0,
+                    "end": 7
+                }
+            ]
+        },
+        {
+            "text": "what's around me?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "department store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"department store\""
+                }
+            ]
+        },
+        {
+            "text": "how much is 54 dollars",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"how_much\"",
+                    "start": 0,
+                    "end": 8
+                },
+                {
+                    "entity": "number",
+                    "value": "54",
+                    "start": 12,
+                    "end": 14
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"USD\"",
+                    "start": 15,
+                    "end": 21
+                }
+            ]
+        },
+        {
+            "text": "exhibitions at weroerwer",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"exhibition\"",
+                    "start": 0,
+                    "end": 11
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "taxi stand",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"taxi stand\""
+                }
+            ]
+        },
+        {
+            "text": "add to my list",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"add_to_likes\""
+                }
+            ]
+        },
+        {
+            "text": "how to get from ghi jkl to fgh qwe",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ghi jkl\"",
+                    "role": "address_from",
+                    "start": 16,
+                    "end": 23
+                },
+                {
+                    "entity": "address",
+                    "value": "\"fgh qwe\"",
+                    "role": "address_to",
+                    "start": 27,
+                    "end": 34
+                }
+            ]
+        },
+        {
+            "text": "concerts at oahfoiahso",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 8
+                },
+                {
+                    "entity": "address",
+                    "value": "\"oahfoiahso\"",
+                    "start": 12,
+                    "end": 22
+                }
+            ]
+        },
+        {
+            "text": "What can I do tonight?",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-07-14T18:00:00.000-07:00\",\"to\":\"2016-07-15T00:00:00.000-07:00\"}",
+                    "start": 14,
+                    "end": 21
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"recommend\""
+                }
+            ]
+        },
+        {
+            "text": "tell me about this",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"about\""
+                }
+            ]
+        },
+        {
+            "text": "every event",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"all_events\""
+                }
+            ]
+        },
+        {
+            "text": "what's going on",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "car dealer",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"car dealer\""
+                }
+            ]
+        },
+        {
+            "text": "will it rain tonight?",
+            "entities": [
+                {
+                    "entity": "weather_question",
+                    "value": "\"rain\"",
+                    "start": 8,
+                    "end": 12
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-09-20T18:00:00.000+02:00\",\"to\":\"2016-09-21T00:00:00.000+02:00\"}",
+                    "start": 13,
+                    "end": 20
+                }
+            ]
+        },
+        {
+            "text": "electronics store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"electronics store\""
+                }
+            ]
+        },
+        {
+            "text": "transport from ggg",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ggg\"",
+                    "role": "address_from",
+                    "start": 15,
+                    "end": 18
+                }
+            ]
+        },
+        {
+            "text": "200 CZK",
+            "entities": []
+        },
+        {
+            "text": "how about a show",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 12,
+                    "end": 16
+                }
+            ]
+        },
+        {
+            "text": "tram to ihohof oisdhfoi",
+            "entities": [
+                {
+                    "entity": "transport_type",
+                    "value": "\"public\"",
+                    "start": 0,
+                    "end": 4
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ihohof oisdhfoi\"",
+                    "role": "address_to",
+                    "start": 8,
+                    "end": 23
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "shops",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"shop\""
+                }
+            ]
+        },
+        {
+            "text": "how to get from ouhuiuhi 25 to osidhoiasd 98",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"ouhuiuhi 25\"",
+                    "role": "address_from",
+                    "start": 16,
+                    "end": 27
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"osidhoiasd 98\"",
+                    "role": "address_to",
+                    "start": 31,
+                    "end": 44
+                }
+            ]
+        },
+        {
+            "text": "lunch",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\""
+                }
+            ]
+        },
+        {
+            "text": "what's your name?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_whats_your_name\""
+                }
+            ]
+        },
+        {
+            "text": "what to do at aijdoasijd",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"aijdoasijd\"",
+                    "start": 14,
+                    "end": 24
+                }
+            ]
+        },
+        {
+            "text": "recommend me",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"recommend\""
+                }
+            ]
+        },
+        {
+            "text": "transport from A to B",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "attraction",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"attraction\"",
+                    "start": 0,
+                    "end": 10
+                }
+            ]
+        },
+        {
+            "text": "museums",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"museum\""
+                }
+            ]
+        },
+        {
+            "text": "museum",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"museum\""
+                }
+            ]
+        },
+        {
+            "text": "what are the events tonight?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"recommend\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-08-25T18:00:00.000+02:00\",\"to\":\"2016-08-26T00:00:00.000+02:00\"}",
+                    "start": 20,
+                    "end": 27
+                }
+            ]
+        },
+        {
+            "text": "campgrounds",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"campground\""
+                }
+            ]
+        },
+        {
+            "text": "taxi stands",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"taxi stand\""
+                }
+            ]
+        },
+        {
+            "text": "czk656",
+            "entities": []
+        },
+        {
+            "text": "Ok. Thank you",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "How to say hi in czech",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"translate\""
+                }
+            ]
+        },
+        {
+            "text": "is there a shop",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "ass",
+            "entities": []
+        },
+        {
+            "text": "best events",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "transport from A to B today at 19:00",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-09-25T19:00:00.000+02:00\"",
+                    "start": 22,
+                    "end": 36
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "casino",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"casino\""
+                }
+            ]
+        },
+        {
+            "text": "transport to ABC",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ABC\"",
+                    "role": "address_to",
+                    "start": 13,
+                    "end": 16
+                }
+            ]
+        },
+        {
+            "text": "furniture stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"furniture store\""
+                }
+            ]
+        },
+        {
+            "text": "tell me more about this",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"about\""
+                }
+            ]
+        },
+        {
+            "text": "location",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "party near OIAJSODIJO",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"OIAJSODIJO\"",
+                    "start": 11,
+                    "end": 21
+                },
+                {
+                    "entity": "query",
+                    "value": "\"party\"",
+                    "start": 0,
+                    "end": 5
+                }
+            ]
+        },
+        {
+            "text": "show",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\""
+                }
+            ]
+        },
+        {
+            "text": "Great",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "any events",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"all_events\""
+                }
+            ]
+        },
+        {
+            "text": "churches",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"church\""
+                }
+            ]
+        },
+        {
+            "text": "veterinary care",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"veterinary care\""
+                }
+            ]
+        },
+        {
+            "text": "car wash",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"car wash\""
+                }
+            ]
+        },
+        {
+            "text": "in 1 hour",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2017-05-20T21:26:00.000+02:00\"",
+                    "start": 0,
+                    "end": 9
+                }
+            ]
+        },
+        {
+            "text": "And what about a concert?",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 17,
+                    "end": 24
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "what's happenning tomorrow",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-11-24T00:00:00.000+01:00\"",
+                    "start": 18,
+                    "end": 26
+                }
+            ]
+        },
+        {
+            "text": "drink spot",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"drink spot\""
+                }
+            ]
+        },
+        {
+            "text": "temperature",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                }
+            ]
+        },
+        {
+            "text": "synagogues",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"synagogue\""
+                }
+            ]
+        },
+        {
+            "text": "i dunno",
+            "entities": [
+                {
+                    "entity": "yes_no",
+                    "value": "\"does_not_know\""
+                }
+            ]
+        },
+        {
+            "text": "recommend tomorrow",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-10-01T00:00:00.000+02:00\"",
+                    "start": 10,
+                    "end": 18
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "transport from x",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "hospital",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"hospital\""
+                }
+            ]
+        },
+        {
+            "text": "how to get to B",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "I don't like it",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"dislike\""
+                }
+            ]
+        },
+        {
+            "text": "how to get to BBB NNN",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"BBB NNN\"",
+                    "role": "address_to",
+                    "start": 14,
+                    "end": 21
+                }
+            ]
+        },
+        {
+            "text": "Farehnheit",
+            "entities": [
+                {
+                    "entity": "temperature_unit",
+                    "value": "\"F\"",
+                    "start": 0,
+                    "end": 10
+                }
+            ]
+        },
+        {
+            "text": "How can I get to ABC",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "courthouses",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"courthouse\""
+                }
+            ]
+        },
+        {
+            "text": "wazzup",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_whats_up\""
+                }
+            ]
+        },
+        {
+            "text": "I like it",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "doctor",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"doctor\""
+                }
+            ]
+        },
+        {
+            "text": "restaurants near iajspp aopjp",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"iajspp aopjp\"",
+                    "start": 17,
+                    "end": 29
+                },
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\"",
+                    "start": 0,
+                    "end": 11
+                }
+            ]
+        },
+        {
+            "text": "music",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\""
+                }
+            ]
+        },
+        {
+            "text": "clubbing",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"party\""
+                }
+            ]
+        },
+        {
+            "text": "all concerts",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 4,
+                    "end": 12
+                }
+            ]
+        },
+        {
+            "text": "transport from A",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "Add it to my plan",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"add_to_likes\""
+                }
+            ]
+        },
+        {
+            "text": "stadium",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"stadium\""
+                }
+            ]
+        },
+        {
+            "text": "show me some movies",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 13,
+                    "end": 19
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 4
+                }
+            ]
+        },
+        {
+            "text": "arrive at 5pm",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-09-25T17:00:00.000+02:00\"",
+                    "start": 7,
+                    "end": 13
+                },
+                {
+                    "entity": "arrival_departure",
+                    "value": "\"arrive\"",
+                    "start": 0,
+                    "end": 6
+                }
+            ]
+        },
+        {
+            "text": "can I give feedback",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"feedback\""
+                }
+            ]
+        },
+        {
+            "text": "my schedule",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"likes\""
+                }
+            ]
+        },
+        {
+            "text": "transport from flora",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "how to say Go to hell in czech",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"translate\""
+                }
+            ]
+        },
+        {
+            "text": "What Travis is?",
+            "entities": []
+        },
+        {
+            "text": "book store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"book store\""
+                }
+            ]
+        },
+        {
+            "text": "svickova",
+            "entities": []
+        },
+        {
+            "text": "tour guide",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"tour guide\""
+                }
+            ]
+        },
+        {
+            "text": "fahrenheit",
+            "entities": []
+        },
+        {
+            "text": "gym",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"gym\""
+                }
+            ]
+        },
+        {
+            "text": "That sucks",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"dislike\""
+                }
+            ]
+        },
+        {
+            "text": "recommend a movie",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 12,
+                    "end": 17
+                }
+            ]
+        },
+        {
+            "text": "My name is Kuba",
+            "entities": [
+                {
+                    "entity": "name",
+                    "value": "\"Kuba\"",
+                    "start": 11,
+                    "end": 15
+                }
+            ]
+        },
+        {
+            "text": "is it going to snow tomorrow?",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-09-21T00:00:00.000+02:00\"",
+                    "start": 20,
+                    "end": 28
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                },
+                {
+                    "entity": "weather_question",
+                    "value": "\"snow\"",
+                    "start": 15,
+                    "end": 19
+                }
+            ]
+        },
+        {
+            "text": "beauty salons",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"beauty salon\""
+                }
+            ]
+        },
+        {
+            "text": "near...",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "spa",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"spa\""
+                }
+            ]
+        },
+        {
+            "text": "pet stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"pet store\""
+                }
+            ]
+        },
+        {
+            "text": "how do I get from Dejvicka to Karlovo namesti",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "czech product",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"local shop\""
+                }
+            ]
+        },
+        {
+            "text": "embassy",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"embassy\""
+                }
+            ]
+        },
+        {
+            "text": "exhibitions this week",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-11-21T00:00:00.000+01:00\"",
+                    "start": 12,
+                    "end": 21
+                },
+                {
+                    "entity": "query",
+                    "value": "\"exhibition\"",
+                    "start": 0,
+                    "end": 11
+                }
+            ]
+        },
+        {
+            "text": "near Ijaoid OIjodas",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"Ijaoid OIjodas\"",
+                    "start": 5,
+                    "end": 19
+                }
+            ]
+        },
+        {
+            "text": "local product",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"local shop\""
+                }
+            ]
+        },
+        {
+            "text": "Tell me about you",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"about\""
+                }
+            ]
+        },
+        {
+            "text": "hardware store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"hardware store\""
+                }
+            ]
+        },
+        {
+            "text": "how much is 666 euros in czech money",
+            "entities": [
+                {
+                    "entity": "number",
+                    "value": "666",
+                    "role": "number_from",
+                    "start": 12,
+                    "end": 15
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "role": "currency_from",
+                    "start": 16,
+                    "end": 21
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_to",
+                    "start": 25,
+                    "end": 36
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"how_much\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "guided tour",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"tour guide\""
+                }
+            ]
+        },
+        {
+            "text": "liquor stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"liquor store\""
+                }
+            ]
+        },
+        {
+            "text": "And what are the top events in prague tomorrow?",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-12-16T00:00:00.000+01:00\"",
+                    "start": 38,
+                    "end": 46
+                },
+                {
+                    "entity": "query",
+                    "value": "\"all_events\"",
+                    "start": 17,
+                    "end": 27
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "veterinary cares",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"veterinary care\""
+                }
+            ]
+        },
+        {
+            "text": "locksmith",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"locksmith\""
+                }
+            ]
+        },
+        {
+            "text": "transport from ofijaif to iajoifho",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"iajoifho\"",
+                    "role": "address_to",
+                    "start": 26,
+                    "end": 34
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ofijaif\"",
+                    "role": "address_from",
+                    "start": 15,
+                    "end": 22
+                }
+            ]
+        },
+        {
+            "text": "home goods stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"home goods store\""
+                }
+            ]
+        },
+        {
+            "text": "shopping mall",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"shopping mall\""
+                }
+            ]
+        },
+        {
+            "text": "local shops",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"local shop\""
+                }
+            ]
+        },
+        {
+            "text": "how much is 200 czk",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"how_much\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "fuck",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_swear\""
+                }
+            ]
+        },
+        {
+            "text": "what's the weather",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                }
+            ]
+        },
+        {
+            "text": "wash my clothes",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"launderette\""
+                }
+            ]
+        },
+        {
+            "text": "caf\u00e9s",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"caf\u00e9\""
+                }
+            ]
+        },
+        {
+            "text": "parties at fghjk",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"party\"",
+                    "start": 0,
+                    "end": 7
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "submit",
+            "entities": [
+                {
+                    "entity": "submit",
+                    "value": "\"submit\""
+                }
+            ]
+        },
+        {
+            "text": "events",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "wash clothes",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"launderette\""
+                }
+            ]
+        },
+        {
+            "text": "exchange CZK to EUR",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"exchange\""
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_from",
+                    "start": 9,
+                    "end": 12
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "role": "currency_to",
+                    "start": 16,
+                    "end": 19
+                }
+            ]
+        },
+        {
+            "text": "public transport from zhzhzh to ujujujuj",
+            "entities": [
+                {
+                    "entity": "transport_type",
+                    "value": "\"public\"",
+                    "start": 0,
+                    "end": 6
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ujujujuj\"",
+                    "role": "address_to",
+                    "start": 32,
+                    "end": 40
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"zhzhzh\"",
+                    "role": "address_from",
+                    "start": 22,
+                    "end": 28
+                }
+            ]
+        },
+        {
+            "text": "what can I do on tuesday",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-11-08T00:00:00.000+01:00\"",
+                    "start": 14,
+                    "end": 24
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "real estate agencies",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"real estate agency\""
+                }
+            ]
+        },
+        {
+            "text": "florists",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"florist\""
+                }
+            ]
+        },
+        {
+            "text": "physiotherapists",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"physiotherapist\""
+                }
+            ]
+        },
+        {
+            "text": "travel agencies",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"travel agency\""
+                }
+            ]
+        },
+        {
+            "text": "how to get to DDD DDD DDD",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"DDD DDD DDD\"",
+                    "role": "address_to",
+                    "start": 14,
+                    "end": 25
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "transport from xxx to yyy",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"yyy\"",
+                    "role": "address_to",
+                    "start": 22,
+                    "end": 25
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "concert at asdf",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 7
+                },
+                {
+                    "entity": "address",
+                    "value": "\"asdf\"",
+                    "start": 11,
+                    "end": 15
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "amusement parks",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"amusement park\""
+                }
+            ]
+        },
+        {
+            "text": "around Pfookaf",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"Pfookaf\"",
+                    "start": 7,
+                    "end": 14
+                }
+            ]
+        },
+        {
+            "text": "partying",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"party\""
+                }
+            ]
+        },
+        {
+            "text": "dinner",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\""
+                }
+            ]
+        },
+        {
+            "text": "transport from ABC to ABC",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ABC\"",
+                    "role": "address_to",
+                    "start": 22,
+                    "end": 25
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ABC\"",
+                    "role": "address_from",
+                    "start": 15,
+                    "end": 18
+                }
+            ]
+        },
+        {
+            "text": "Howdy",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"greeting\""
+                }
+            ]
+        },
+        {
+            "text": "That's great",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "club",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"club\""
+                }
+            ]
+        },
+        {
+            "text": "meal deliveries",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"meal delivery\""
+                }
+            ]
+        },
+        {
+            "text": "hindu temple",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"hindu temple\""
+                }
+            ]
+        },
+        {
+            "text": "gallery",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"gallery\""
+                }
+            ]
+        },
+        {
+            "text": "history",
+            "entities": [
+                {
+                    "entity": "tag",
+                    "value": "\"history\"",
+                    "start": 0,
+                    "end": 7
+                }
+            ]
+        },
+        {
+            "text": "how old is the bridge",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"about\""
+                },
+                {
+                    "entity": "about_question",
+                    "value": "\"age\"",
+                    "start": 4,
+                    "end": 7
+                }
+            ]
+        },
+        {
+            "text": "near Joijoioi",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"Joijoioi\"",
+                    "start": 5,
+                    "end": 13
+                }
+            ]
+        },
+        {
+            "text": "what's going on tomorrow",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-11-24T00:00:00.000+01:00\"",
+                    "start": 13,
+                    "end": 24
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "that sucks",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"dislike\""
+                }
+            ]
+        },
+        {
+            "text": "next page",
+            "entities": []
+        },
+        {
+            "text": "attractions",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"attraction\""
+                }
+            ]
+        },
+        {
+            "text": "local shop",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"local shop\""
+                }
+            ]
+        },
+        {
+            "text": "around me",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "Please turn the",
+            "entities": []
+        },
+        {
+            "text": "department stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"department store\""
+                }
+            ]
+        },
+        {
+            "text": "exhibition",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"exhibition\""
+                }
+            ]
+        },
+        {
+            "text": "launderette",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"launderette\""
+                }
+            ]
+        },
+        {
+            "text": "show me movies",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"recommend\""
+                }
+            ]
+        },
+        {
+            "text": "how to get from A to B",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "all locations",
+            "entities": [
+                {
+                    "entity": "custom_location",
+                    "value": "\"anywhere\"",
+                    "start": 0,
+                    "end": 13
+                }
+            ]
+        },
+        {
+            "text": "recommend film",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 10,
+                    "end": 14
+                }
+            ]
+        },
+        {
+            "text": "how do you say hi in czech",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"translate\""
+                }
+            ]
+        },
+        {
+            "text": "stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"store\""
+                }
+            ]
+        },
+        {
+            "text": "universities",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"university\""
+                }
+            ]
+        },
+        {
+            "text": "recommend me a movie",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 15,
+                    "end": 20
+                }
+            ]
+        },
+        {
+            "text": "events this week",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-11-21T00:00:00.000+01:00\"",
+                    "start": 7,
+                    "end": 16
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "exchange euros to dollars",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"exchange\""
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "role": "currency_from",
+                    "start": 9,
+                    "end": 14
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"USD\"",
+                    "role": "currency_to",
+                    "start": 18,
+                    "end": 24
+                }
+            ]
+        },
+        {
+            "text": "sushi",
+            "entities": [
+                {
+                    "entity": "tag",
+                    "value": "\"sushi\"",
+                    "start": 0,
+                    "end": 5
+                }
+            ]
+        },
+        {
+            "text": "tomorrow morning",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-08-23T04:00:00.000+02:00\",\"to\":\"2016-08-23T12:00:00.000+02:00\"}",
+                    "start": 0,
+                    "end": 16
+                }
+            ]
+        },
+        {
+            "text": "what are the events for tonight",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-11-23T18:00:00.000+01:00\",\"to\":\"2016-11-24T00:00:00.000+01:00\"}",
+                    "start": 24,
+                    "end": 31
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "wenceslas square",
+            "entities": []
+        },
+        {
+            "text": "here",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "shop",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"shop\""
+                }
+            ]
+        },
+        {
+            "text": "how to get to RRR TTT",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"RRR TTT\"",
+                    "role": "address_to",
+                    "start": 14,
+                    "end": 21
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "restaurants near Hopodopolopo",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\"",
+                    "start": 0,
+                    "end": 11
+                },
+                {
+                    "entity": "address",
+                    "value": "\"Hopodopolopo\"",
+                    "start": 17,
+                    "end": 29
+                }
+            ]
+        },
+        {
+            "text": "Ciao",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"greeting\""
+                }
+            ]
+        },
+        {
+            "text": "Suggestions",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_suggestions\""
+                }
+            ]
+        },
+        {
+            "text": "monday at 5",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2017-05-22T05:00:00.000+02:00\"",
+                    "start": 0,
+                    "end": 11
+                }
+            ]
+        },
+        {
+            "text": "How did you get your name?",
+            "entities": []
+        },
+        {
+            "text": "It sucks",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"dislike\""
+                }
+            ]
+        },
+        {
+            "text": "do my laundry",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"launderette\""
+                }
+            ]
+        },
+        {
+            "text": "gigs",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\""
+                }
+            ]
+        },
+        {
+            "text": "who built you",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_who_are_you\""
+                },
+                {
+                    "entity": "about_question",
+                    "value": "\"who\"",
+                    "start": 0,
+                    "end": 3
+                }
+            ]
+        },
+        {
+            "text": "tell me a funny joke",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_joke\""
+                }
+            ]
+        },
+        {
+            "text": "help",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"help\""
+                }
+            ]
+        },
+        {
+            "text": "library",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"library\""
+                }
+            ]
+        },
+        {
+            "text": "gas stations",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"gas station\""
+                }
+            ]
+        },
+        {
+            "text": "city centre",
+            "entities": []
+        },
+        {
+            "text": "how much is 150 crowns",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"how_much\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "beer spots",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"beer spots\""
+                }
+            ]
+        },
+        {
+            "text": "search location",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "Transport to Malostransk\u00e9 n\u00e1m. 21",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "what can I do tonight",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"recommend\""
+                }
+            ]
+        },
+        {
+            "text": "where should I go tonight",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-11-23T18:00:00.000+01:00\",\"to\":\"2016-11-24T00:00:00.000+01:00\"}",
+                    "start": 18,
+                    "end": 25
+                },
+                {
+                    "entity": "search_question",
+                    "value": "\"where\"",
+                    "start": 0,
+                    "end": 5
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "czk to 200 euros",
+            "entities": [
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "start": 0,
+                    "end": 3
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "role": "currency_to",
+                    "start": 11,
+                    "end": 16
+                },
+                {
+                    "entity": "number",
+                    "value": "200",
+                    "role": "number_to",
+                    "start": 7,
+                    "end": 10
+                }
+            ]
+        },
+        {
+            "text": "mosques",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"mosque\""
+                }
+            ]
+        },
+        {
+            "text": "hairdresser",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"hairdresser\""
+                }
+            ]
+        },
+        {
+            "text": "clubs at JFAOIJSFOIJO",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"club\"",
+                    "start": 0,
+                    "end": 5
+                },
+                {
+                    "entity": "address",
+                    "value": "\"JFAOIJSFOIJO\"",
+                    "start": 9,
+                    "end": 21
+                }
+            ]
+        },
+        {
+            "text": "outdoor places",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"outdoor place\""
+                }
+            ]
+        },
+        {
+            "text": "aquarium",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"aquarium\""
+                }
+            ]
+        },
+        {
+            "text": "outdoor place",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"outdoor place\""
+                }
+            ]
+        },
+        {
+            "text": "How can I get to Na Safrance?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "lawyers",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"lawyer\""
+                }
+            ]
+        },
+        {
+            "text": "exchange",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"exchange office\""
+                }
+            ]
+        },
+        {
+            "text": "how much is 300 czech money",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"how_much\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "car dealers",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"car dealer\""
+                }
+            ]
+        },
+        {
+            "text": "dancing",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"party\""
+                }
+            ]
+        },
+        {
+            "text": "what should I do",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "no",
+            "entities": [
+                {
+                    "entity": "yes_no",
+                    "value": "\"no\""
+                }
+            ]
+        },
+        {
+            "text": "car rentals",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"car rental\""
+                }
+            ]
+        },
+        {
+            "text": "electronics stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"electronics store\""
+                }
+            ]
+        },
+        {
+            "text": "how about a film",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 12,
+                    "end": 16
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "hairdressers",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"hairdresser\""
+                }
+            ]
+        },
+        {
+            "text": "Meh",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"dislike\""
+                }
+            ]
+        },
+        {
+            "text": "concert near ojpaogpoajg",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 7
+                },
+                {
+                    "entity": "address",
+                    "value": "\"ojpaogpoajg\"",
+                    "start": 13,
+                    "end": 24
+                }
+            ]
+        },
+        {
+            "text": "350 euros to czk",
+            "entities": [
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "role": "currency_from",
+                    "start": 4,
+                    "end": 9
+                },
+                {
+                    "entity": "number",
+                    "value": "350",
+                    "role": "number_from",
+                    "start": 0,
+                    "end": 3
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_to",
+                    "start": 13,
+                    "end": 16
+                }
+            ]
+        },
+        {
+            "text": "restaurants near aojspoajfpaojspf",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\"",
+                    "start": 0,
+                    "end": 11
+                },
+                {
+                    "entity": "address",
+                    "value": "\"aojspoajfpaojspf\"",
+                    "start": 17,
+                    "end": 33
+                }
+            ]
+        },
+        {
+            "text": "tell me something about you",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_who_are_you\""
+                }
+            ]
+        },
+        {
+            "text": "dentists",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"dentist\""
+                }
+            ]
+        },
+        {
+            "text": "how about a film?",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 12,
+                    "end": 16
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "and to IJOJOIJOI",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"IJOJOIJOI\"",
+                    "role": "address_to",
+                    "start": 7,
+                    "end": 16
+                }
+            ]
+        },
+        {
+            "text": "convenience stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"convenience store\""
+                }
+            ]
+        },
+        {
+            "text": "yup",
+            "entities": [
+                {
+                    "entity": "yes_no",
+                    "value": "\"yes\""
+                }
+            ]
+        },
+        {
+            "text": "restaurants at Adsjpasodjpj",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"Adsjpasodjpj\"",
+                    "start": 15,
+                    "end": 27
+                },
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\"",
+                    "start": 0,
+                    "end": 11
+                }
+            ]
+        },
+        {
+            "text": "I love it!",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "my likes",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"likes\""
+                }
+            ]
+        },
+        {
+            "text": "car repair",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"car repair\""
+                }
+            ]
+        },
+        {
+            "text": "gig",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\""
+                }
+            ]
+        },
+        {
+            "text": "plumber",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"plumber\""
+                }
+            ]
+        },
+        {
+            "text": "convert czech money to euros",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"exchange\""
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_from",
+                    "start": 8,
+                    "end": 19
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "role": "currency_to",
+                    "start": 23,
+                    "end": 28
+                }
+            ]
+        },
+        {
+            "text": "Great thanks!",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "who made you?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_who_are_you\""
+                }
+            ]
+        },
+        {
+            "text": "do you know any jokes?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_joke\""
+                }
+            ]
+        },
+        {
+            "text": "physiotherapist",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"physiotherapist\""
+                }
+            ]
+        },
+        {
+            "text": "hindu temples",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"hindu temple\""
+                }
+            ]
+        },
+        {
+            "text": "park car",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"parking\""
+                }
+            ]
+        },
+        {
+            "text": "near me",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "aquariums",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"aquarium\""
+                }
+            ]
+        },
+        {
+            "text": "im bored as hell",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_bored\""
+                }
+            ]
+        },
+        {
+            "text": "city halls",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"city hall\""
+                }
+            ]
+        },
+        {
+            "text": "What can i do today",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-11-02T00:00:00.000+01:00\"",
+                    "start": 14,
+                    "end": 19
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "pharmacies",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"pharmacy\""
+                }
+            ]
+        },
+        {
+            "text": "convenience store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"convenience store\""
+                }
+            ]
+        },
+        {
+            "text": "mosque",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"mosque\""
+                }
+            ]
+        },
+        {
+            "text": "any location",
+            "entities": [
+                {
+                    "entity": "custom_location",
+                    "value": "\"anywhere\"",
+                    "start": 0,
+                    "end": 12
+                }
+            ]
+        },
+        {
+            "text": "how about a movie?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"cinema\"",
+                    "start": 12,
+                    "end": 17
+                }
+            ]
+        },
+        {
+            "text": "Who you are Travis",
+            "entities": []
+        },
+        {
+            "text": "all the events",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"all_events\""
+                }
+            ]
+        },
+        {
+            "text": "how to get from Karlovo namesti to Andel now",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-10-04T14:48:01.000+02:00\"",
+                    "start": 41,
+                    "end": 44
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "stadiums",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"stadium\""
+                }
+            ]
+        },
+        {
+            "text": "what interesting I can do this weekend?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "{\"to\":\"2016-12-19T00:00:00.000+01:00\",\"from\":\"2016-12-16T18:00:00.000+01:00\"}",
+                    "start": 26,
+                    "end": 38
+                }
+            ]
+        },
+        {
+            "text": "I'm hungry",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"chat_hungry\""
+                }
+            ]
+        },
+        {
+            "text": "transport from BCD to DEF",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"DEF\"",
+                    "role": "address_to",
+                    "start": 22,
+                    "end": 25
+                },
+                {
+                    "entity": "address",
+                    "value": "\"BCD\"",
+                    "role": "address_from",
+                    "start": 15,
+                    "end": 18
+                }
+            ]
+        },
+        {
+            "text": "how do i get to iaohsdioh",
+            "entities": [
+                {
+                    "entity": "address",
+                    "value": "\"iaohsdioh\"",
+                    "role": "address_to",
+                    "start": 16,
+                    "end": 25
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "exchange offices",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"exchange office\""
+                }
+            ]
+        },
+        {
+            "text": "movie theaters",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"movie theater\""
+                }
+            ]
+        },
+        {
+            "text": "what's up in Prague?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "transport from Sudomerska 19 to arrive at 20:00",
+            "entities": [
+                {
+                    "entity": "arrival_departure",
+                    "value": "\"arrival\"",
+                    "start": 32,
+                    "end": 38
+                },
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-09-25T20:00:00.000+02:00\"",
+                    "start": 39,
+                    "end": 47
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "what should I see tonight?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-09-28T18:00:00.000+02:00\",\"to\":\"2016-09-29T00:00:00.000+02:00\"}",
+                    "start": 18,
+                    "end": 25
+                }
+            ]
+        },
+        {
+            "text": "campground",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"campground\""
+                }
+            ]
+        },
+        {
+            "text": "dining",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"restaurant\""
+                }
+            ]
+        },
+        {
+            "text": "travel agency",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"travel agency\""
+                }
+            ]
+        },
+        {
+            "text": "shoe stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"shoe store\""
+                }
+            ]
+        },
+        {
+            "text": "hotel",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"hotel\"",
+                    "start": 0,
+                    "end": 5
+                }
+            ]
+        },
+        {
+            "text": "casinos",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"casino\""
+                }
+            ]
+        },
+        {
+            "text": "locksmiths",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"locksmith\""
+                }
+            ]
+        },
+        {
+            "text": "search transport",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                }
+            ]
+        },
+        {
+            "text": "How about italian food?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "tag",
+                    "value": "\"italian\"",
+                    "start": 10,
+                    "end": 17
+                }
+            ]
+        },
+        {
+            "text": "car repairs",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"car repair\""
+                }
+            ]
+        },
+        {
+            "text": "search near me",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "florist",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"florist\""
+                }
+            ]
+        },
+        {
+            "text": "real estate agency",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"real estate agency\""
+                }
+            ]
+        },
+        {
+            "text": "nvm",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"never_mind\""
+                }
+            ]
+        },
+        {
+            "text": "home goods store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"home goods store\""
+                }
+            ]
+        },
+        {
+            "text": "furniture store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"furniture store\""
+                }
+            ]
+        },
+        {
+            "text": "bowling alley",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"bowling alley\""
+                }
+            ]
+        },
+        {
+            "text": "My perfect week",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"perfect\""
+                }
+            ]
+        },
+        {
+            "text": "show help",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"help\""
+                }
+            ]
+        },
+        {
+            "text": "atms",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"atm\""
+                }
+            ]
+        },
+        {
+            "text": "moving company",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"moving company\""
+                }
+            ]
+        },
+        {
+            "text": "banks",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"bank\""
+                }
+            ]
+        },
+        {
+            "text": "galleries",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"gallery\""
+                }
+            ]
+        },
+        {
+            "text": "bug",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"bug\""
+                }
+            ]
+        },
+        {
+            "text": "launderettes",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"launderette\""
+                }
+            ]
+        },
+        {
+            "text": "weather",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                }
+            ]
+        },
+        {
+            "text": "lawyer",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"lawyer\""
+                }
+            ]
+        },
+        {
+            "text": "sucks",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"dislike\""
+                }
+            ]
+        },
+        {
+            "text": "Tomorrow night",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-07-15T18:00:00.000-07:00\",\"to\":\"2016-07-16T00:00:00.000-07:00\"}",
+                    "start": 0,
+                    "end": 14
+                }
+            ]
+        },
+        {
+            "text": "roofing contractor",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"roofing contractor\""
+                }
+            ]
+        },
+        {
+            "text": "find near me",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "tomorrow at 10",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2017-05-21T00:00:00.000+02:00\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "bakeries",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"bakery\""
+                }
+            ]
+        },
+        {
+            "text": "liquor store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"liquor store\""
+                }
+            ]
+        },
+        {
+            "text": "amusement park",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"amusement park\""
+                }
+            ]
+        },
+        {
+            "text": "zoo",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"zoo\""
+                }
+            ]
+        },
+        {
+            "text": "electrician",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"electrician\""
+                }
+            ]
+        },
+        {
+            "text": "concerts at aifhaoishfo",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"aifhaoishfo\"",
+                    "start": 12,
+                    "end": 23
+                },
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 8
+                }
+            ]
+        },
+        {
+            "text": "car parks",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"parking\""
+                }
+            ]
+        },
+        {
+            "text": "events tonight near me",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "{\"to\":\"2017-05-27T00:00:00.000+02:00\",\"from\":\"2017-05-26T18:00:00.000+02:00\"}",
+                    "start": 7,
+                    "end": 14
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "and tomorrow",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2016-09-11T00:00:00.000+02:00\"",
+                    "start": 4,
+                    "end": 12
+                }
+            ]
+        },
+        {
+            "text": "store",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"store\""
+                }
+            ]
+        },
+        {
+            "text": "what can you do?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"help\""
+                }
+            ]
+        },
+        {
+            "text": "That's not what I mean",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"bug\""
+                }
+            ]
+        },
+        {
+            "text": "exhibitions at poajkpodkpas",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                },
+                {
+                    "entity": "query",
+                    "value": "\"exhibition\"",
+                    "start": 0,
+                    "end": 11
+                },
+                {
+                    "entity": "address",
+                    "value": "\"poajkpodkpas\"",
+                    "start": 15,
+                    "end": 27
+                }
+            ]
+        },
+        {
+            "text": "show me recommendations",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"concert\"",
+                    "start": 0,
+                    "end": 4
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"search\""
+                }
+            ]
+        },
+        {
+            "text": "how much euros is 200 czk",
+            "entities": [
+                {
+                    "entity": "currency",
+                    "value": "\"EUR\"",
+                    "role": "currency_from",
+                    "start": 9,
+                    "end": 14
+                },
+                {
+                    "entity": "number",
+                    "value": "200",
+                    "role": "number_to",
+                    "start": 18,
+                    "end": 21
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"how_much\"",
+                    "start": 0,
+                    "end": 8
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_to",
+                    "start": 22,
+                    "end": 25
+                }
+            ]
+        },
+        {
+            "text": "do laundry",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"launderette\""
+                }
+            ]
+        },
+        {
+            "text": "clothing stores",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"clothing store\""
+                }
+            ]
+        },
+        {
+            "text": "doctors",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"doctor\""
+                }
+            ]
+        },
+        {
+            "text": "hotels",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"hotel\""
+                }
+            ]
+        },
+        {
+            "text": "Who are you Travis?",
+            "entities": []
+        },
+        {
+            "text": "atm",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"atm\""
+                }
+            ]
+        },
+        {
+            "text": "party near iajfoijfao",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"party\"",
+                    "start": 0,
+                    "end": 5
+                },
+                {
+                    "entity": "address",
+                    "value": "\"iajfoijfao\"",
+                    "start": 11,
+                    "end": 21
+                }
+            ]
+        },
+        {
+            "text": "what's the temperature?",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"weather\""
+                }
+            ]
+        },
+        {
+            "text": "mhmm",
+            "entities": [
+                {
+                    "entity": "yes_no",
+                    "value": "\"yes\""
+                }
+            ]
+        },
+        {
+            "text": "wednesday at 7",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "\"2017-05-24T00:00:00.000+02:00\"",
+                    "start": 0,
+                    "end": 9
+                }
+            ]
+        },
+        {
+            "text": "near",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "what can I do tonight?",
+            "entities": [
+                {
+                    "entity": "datetime",
+                    "value": "{\"from\":\"2016-08-22T18:00:00.000+02:00\",\"to\":\"2016-08-23T00:00:00.000+02:00\"}",
+                    "start": 14,
+                    "end": 21
+                },
+                {
+                    "entity": "intent",
+                    "value": "\"recommend\""
+                }
+            ]
+        },
+        {
+            "text": "search address",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"ask_for_location\""
+                }
+            ]
+        },
+        {
+            "text": "100 CZK in GBP",
+            "entities": [
+                {
+                    "entity": "number",
+                    "value": "100",
+                    "role": "number_from",
+                    "start": 0,
+                    "end": 3
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"CZK\"",
+                    "role": "currency_from",
+                    "start": 4,
+                    "end": 7
+                },
+                {
+                    "entity": "currency",
+                    "value": "\"GBP\"",
+                    "role": "currency_to",
+                    "start": 11,
+                    "end": 14
+                }
+            ]
+        },
+        {
+            "text": "amazing!",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"like\""
+                }
+            ]
+        },
+        {
+            "text": "sights",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"sight\""
+                }
+            ]
+        },
+        {
+            "text": "bus to joaisdhoaih ioasdhoi",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"joaisdhoaih ioasdhoi\"",
+                    "role": "address_to",
+                    "start": 7,
+                    "end": 27
+                },
+                {
+                    "entity": "transport_type",
+                    "value": "\"public\"",
+                    "start": 0,
+                    "end": 3
+                }
+            ]
+        },
+        {
+            "text": "bank",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"bank\""
+                }
+            ]
+        },
+        {
+            "text": "HI",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"greeting\""
+                }
+            ]
+        },
+        {
+            "text": "exchg",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"exchange office\""
+                }
+            ]
+        },
+        {
+            "text": "subway station",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"subway station\""
+                }
+            ]
+        },
+        {
+            "text": "add to my schedule",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"add_to_likes\""
+                }
+            ]
+        },
+        {
+            "text": "tram from wswswssw to wswswsw",
+            "entities": [
+                {
+                    "entity": "intent",
+                    "value": "\"transport\""
+                },
+                {
+                    "entity": "address",
+                    "value": "\"wswswsw\"",
+                    "role": "address_to",
+                    "start": 22,
+                    "end": 29
+                },
+                {
+                    "entity": "transport_type",
+                    "value": "\"public\"",
+                    "start": 0,
+                    "end": 4
+                },
+                {
+                    "entity": "address",
+                    "value": "\"wswswssw\"",
+                    "role": "address_from",
+                    "start": 10,
+                    "end": 18
+                }
+            ]
+        },
+        {
+            "text": "city hall",
+            "entities": [
+                {
+                    "entity": "query",
+                    "value": "\"city hall\""
+                }
+            ]
+        }
+    ]
+}
