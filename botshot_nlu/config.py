@@ -125,4 +125,4 @@ class ParseHelper:
     def parse(self, text):
         for model in self.models:
             result = model.predict(text)
-            print(result)
+            return result  # TODO

@@ -16,11 +16,11 @@ def start_training(args):
 
 
 def start_parse(args):
-    config = read_training_config(args.config)
     helper = ParseHelper.load(args.model_path)
     print("Enter query: (exit with Ctrl+D)")
     for line in sys.stdin:
-        helper.parse(line)
+        output = helper.parse(line)
+        print(output)
 
 
 def main():

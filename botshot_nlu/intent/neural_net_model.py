@@ -203,4 +203,4 @@ class NeuralNetModel(IntentModel):
         prob, label = np.max(probs), np.argmax(probs)
         
         label = self.pipeline.decode_labels([label])
-        return {"intent": [{"value": label, "confidence": prob}]}
+        return {"intent": [{"value": label, "confidence": float(prob)}]}
