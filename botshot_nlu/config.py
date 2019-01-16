@@ -30,7 +30,7 @@ class TrainingHelper:
     def start(self):
         if self.save_path:
             os.makedirs(self.save_path)
-            self.pipeline_data = {"pipelines": []}  # stores feature and label encoding
+            self.pipeline_data = {"pipelines": {}}  # stores feature and label encoding
         
         if 'intent' in self.config.get("entities", {}):
             self.train_intent()

@@ -11,10 +11,10 @@ input:
       "api_url": "http://zilinec.me/foo.json"
 
 entities:
-  #intent:
-  #  model: botshot_nlu.intent.neural_net_model.NeuralNetModel
-  #  tokenizer: botshot_nlu.tokenizer.whitespace.WhitespaceTokenizer
-  #  featurizer: botshot_nlu.pipeline.featurizer.BagOfWordsFeaturizer
+  intent:
+    model: botshot_nlu.intent.neural_net_model.NeuralNetModel
+    tokenizer: botshot_nlu.tokenizer.whitespace.WhitespaceTokenizer
+    featurizer: botshot_nlu.pipeline.featurizer.BagOfWordsFeaturizer
   course:
     keywords:
       model: botshot_nlu.keywords.trie.TrieKeywordExtractor
