@@ -40,14 +40,21 @@ class EmbeddingKeywordExtractor(KeywordExtractor):
             self.keywords.append((vector, label, entity))
 
     def predict(self, text: str):
+        tokens = self.tokenizer.tokenize(text)
         text_vectors = []
         output = {}
-        for token in self.tokenizer.tokenize(text):
+        for token in tokens:
             v = self.embedding.get_vector(token)
             text_vectors.append(v)
 
-        for expression, label, entity in self.keywords:
-            for vector in text_vectors:
-                if 1 - cosine(expression, vector) >= self.threshold:
-                    output.setdefault(entity, []).append({"value": label})
+        for i, vector in enumerate(text_vectors):
+            most_similar_label, most_similar_entity, max_similarity = None, None, -1.0
+            for expression, label, entity in self.keywords:
+                similarity = 1 - cosine(expression, vector)
+                if similarity > max_similarity:
+                    max_similarity = similarity
+                    most_similar_label = label
+                    most_similar_entity = entity
+            if max_similarity >= self.threshold:
+                output.setdefault(most_similar_entity, []).append({"value": tokens[i], "similar_to": most_similar_label, "confidence": max_similarity})
         return output
