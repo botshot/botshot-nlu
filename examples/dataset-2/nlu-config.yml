@@ -5,6 +5,10 @@ input:
   keywords:
   - keywords.yml
   providers:
+  - botshot_nlu.provider.RestProvider:
+    - "http://zilinec.me/foo.json"
+  - botshot_nlu.provider.RestProvider:
+      "api_url": "http://zilinec.me/foo.json"
 
 entities:
   #intent:

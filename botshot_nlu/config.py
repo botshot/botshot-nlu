@@ -185,8 +185,23 @@ class ParseHelper:
                     sources[i] = abs_filename
             dataset = StaticKeywordDataset.load(*sources)
             datasets.append(dataset)
+        
         providers = config['input'].get('providers', [])
-        # TODO: load dynamic providers (SQL, REST, custom, ...)
+        for item in providers:
+            if isinstance(item, str):
+                provider = create_class_instance(item)
+            elif isinstance(item, dict):
+                for provider_cls, params in item.items():
+                    if isinstance(params, list):
+                        provider = create_class_instance(provider_cls, *params)
+                    elif isinstance(params, dict):
+                        provider = create_class_instance(provider_cls, **params)
+                    else:
+                        raise Exception("Can't instantiate provider %s: parameters should be list or dict" % provider_cls)
+                    datasets.append(provider)
+            else:
+                raise Exception("Providers config is malformed")
+
         return datasets
 
     @staticmethod

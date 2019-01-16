@@ -5,7 +5,7 @@ import yaml
 class KeywordDataset(ABC):
 
     @abstractmethod
-    def get_entities(self):
+    def get_entities(self) -> set:
         raise NotImplementedError()
 
     @abstractmethod

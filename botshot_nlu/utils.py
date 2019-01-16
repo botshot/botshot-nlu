@@ -1,7 +1,7 @@
 import importlib
 
 
-def create_class_instance(cls: str, **kwargs):
+def create_class_instance(cls: str, *args, **kwargs):
     # TODO: always return same object for same specification
     if not isinstance(cls, str):
         raise ValueError("Expected classname as string, not {}".format(type(cls)))
@@ -11,7 +11,7 @@ def create_class_instance(cls: str, **kwargs):
     clz = getattr(module, cls_name)
 
     try:
-        return clz(**kwargs)
+        return clz(*args, **kwargs)
     except TypeError as ex:
         raise Exception("Can't instantiate class {}! See exception above.".format(cls)) from ex
 
