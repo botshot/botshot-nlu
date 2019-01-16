@@ -6,7 +6,7 @@ from typing import Optional
 
 class PipelineComponent(ABC):
 
-    def __init__(self, config: dict):
+    def __init__(self, config: dict):  # TODO: can config be removed (e.g. for keyword models)?
         self.config = config
 
     @abstractmethod

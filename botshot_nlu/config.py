@@ -154,9 +154,11 @@ class ParseHelper:
         return ParseHelper(config, models)
 
     def parse(self, text):
+        results = {}
         for model in self.models:
             result = model.predict(text)
-            return result  # TODO
+            results.update(result)
+        return results
 
     @staticmethod
     def load_intent_model(config: dict, config_dir: str, pipeline_data):
@@ -189,14 +191,19 @@ class ParseHelper:
 
     @staticmethod
     def load_keyword_models(config: dict, datasets: list):
-        model_classes = {}
+        models_spec = {}
         models = []
         for entity, entity_conf in config['entities'].items():
             if entity == 'intent': continue
-            model_cls = entity_conf['keyword_model']
-            model_classes.setdefault(model_cls, []).append(entity)
-        for model_cls, entities in model_classes.items():
+            keywords_config = entity_conf.get('keywords')
+            if keywords_config:
+                key = frozenset(keywords_config.items())
+                models_spec.setdefault(key, []).append(entity)
+        for model_spec, entities in models_spec.items():
+            model_spec = dict(model_spec)
+            model_cls = model_spec['model']
             required_datasets = [dataset for dataset in datasets if any(set(entities) & dataset.get_entities())]
-            model = create_class_instance(model_cls, entities=entities, datasets=required_datasets)
+            model = create_class_instance(model_cls, config=model_spec, entities=entities, datasets=required_datasets)
             models.append(model)
+        print(models)
         return models

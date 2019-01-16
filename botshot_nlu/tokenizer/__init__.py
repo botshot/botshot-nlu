@@ -14,3 +14,6 @@ class Tokenizer(PipelineComponent):
 
     def feature_dim(self):
         return None
+
+    def tokenize(self, sentence):
+        pass

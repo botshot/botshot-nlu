@@ -2,6 +2,7 @@ import importlib
 
 
 def create_class_instance(cls: str, **kwargs):
+    # TODO: always return same object for same specification
     if not isinstance(cls, str):
         raise ValueError("Expected classname as string, not {}".format(type(cls)))
 
@@ -13,3 +14,8 @@ def create_class_instance(cls: str, **kwargs):
         return clz(**kwargs)
     except TypeError as ex:
         raise Exception("Can't instantiate class {}! See exception above.".format(cls)) from ex
+
+
+def get_default_tokenizer():
+    from botshot_nlu.tokenizer.whitespace import WhitespaceTokenizer
+    return WhitespaceTokenizer(config=None)

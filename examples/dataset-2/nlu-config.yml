@@ -12,4 +12,10 @@ entities:
   #  tokenizer: botshot_nlu.tokenizer.whitespace.WhitespaceTokenizer
   #  featurizer: botshot_nlu.pipeline.featurizer.BagOfWordsFeaturizer
   course:
-    keyword_model: botshot_nlu.keywords.trie.TrieKeywordExtractor
+    keywords:
+      model: botshot_nlu.keywords.trie.TrieKeywordExtractor
+      embedding: foo
+  fruit:
+    keywords:
+      model: botshot_nlu.keywords.embedding.EmbeddingKeywordExtractor
+      embedding_file: /home/goovi/datasets/fasttext-en/cc.en.300.vec

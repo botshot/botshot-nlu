@@ -9,6 +9,9 @@ class WhitespaceTokenizer(Tokenizer):
     def transform(self, sentences):
         out = []
         for sent in sentences:
-            sent = re.sub("[.,;!?\t\n]", " ", sent)
-            out.append(sent.split(" "))
+            out.append(self.tokenize(sent))
         return out
+
+    def tokenize(self, sentence: str):
+        sentence = re.sub("[.,;!?\t\n]", " ", sentence)
+        return [token for token in sentence.split(" ") if token]

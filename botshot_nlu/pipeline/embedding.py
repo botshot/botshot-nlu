@@ -58,6 +58,21 @@ class Embedding:
 
         return positions
 
+    def get_vector(self, word: str, ngrams=3):
+        v = np.zeros([self.dimension])  # TODO: use <unk> if present instead
+        cnt = 0
+        for i in range(len(word) - self.dimension + 1):
+            substr = word[i:i+self.dimension]
+            u = self.word2vec(substr)
+            if u is None: continue
+            v += u
+            cnt += 1
+        u = self.word2vec(word)
+        if u is not None:
+            v += u
+            cnt += 1
+        return v / cnt if cnt else v
+
     def word2vec(self, word):
 
         if not isinstance(word, str):
