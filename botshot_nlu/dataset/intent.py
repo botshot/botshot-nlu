@@ -12,6 +12,7 @@ class IntentDataset:
 
     def __init__(self, data_pairs, mode=BatchMode.SEQUENTIAL):
         self.data_pairs = data_pairs
+        self.data_pairs.append(("", None))  # TODO: to avoid bias
         _, self.labels = zip(*data_pairs)
         self.labels = list(set(self.labels))
         self.utterances = {}

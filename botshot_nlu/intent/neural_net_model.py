@@ -164,10 +164,11 @@ class NeuralNetModel(IntentModel):
 
         x_info = tf.saved_model.utils.build_tensor_info(self.placeholder_x)
         y_info = tf.saved_model.utils.build_tensor_info(self.predicted_labels)
+        p_info = tf.saved_model.utils.build_tensor_info(self.probabilities)
 
         prediction_signature = tf.saved_model.signature_def_utils.build_signature_def(
             inputs={'x': x_info},
-            outputs={'y': y_info},
+            outputs={'y': y_info, 'p': p_info},
             method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME
         )
 
@@ -190,16 +191,16 @@ class NeuralNetModel(IntentModel):
         signature_key = tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY
         x_name = signature[signature_key].inputs['x'].name
         y_name = signature[signature_key].outputs['y'].name
+        p_name = signature[signature_key].outputs['p'].name
 
-        # print(session.graph.get_operations())
         self.placeholder_x = session.graph.get_tensor_by_name(x_name)
         self.predicted_labels = session.graph.get_tensor_by_name(y_name)
+        self.probabilities = session.graph.get_tensor_by_name(p_name)
 
     def predict(self, input):
-        input = self.pipeline.transform(input)
-        labels = self.session.run(self.predicted_labels, feed_dict={self.placeholder_x: input})
-        print(labels)
-        return self.pipeline.decode_labels(labels)
-#        max, argmax = np.max(labels), np.argmax(labels)
-#        if max > 0.:
-#            return self.pipeline.decode_labels([argmax])
+        input = self.pipeline.transform([input])
+        probs = self.session.run(self.probabilities, feed_dict={self.placeholder_x: input})
+        prob, label = np.max(probs), np.argmax(probs)
+        
+        label = self.pipeline.decode_labels([label])
+        return {"intent": [{"value": label, "confidence": prob}]}

@@ -20,7 +20,7 @@ def start_parse(args):
     helper = ParseHelper.load(args.model_path)
     print("Enter query: (exit with Ctrl+D)")
     for line in sys.stdin:
-        helper.parse([line])
+        helper.parse(line)
 
 
 def main():
