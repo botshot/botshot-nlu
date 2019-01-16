@@ -113,14 +113,15 @@ def _load_from_yml(filename):
     return data
 
 
-def load_training_data(*filenames):
+def load_training_examples(*filenames):
     data = []
     for filename in filenames:
         if filename.endswith(".json") or filename.endswith(".yml") or filename.endswith(".yaml"):
-            data += _load_from_yml(filename)
+            data += _load_from_yml(filename)  # json examples (wit.ai format)
         else:
-            data += _load_sentences(filename)
+            data += _load_sentences(filename)  # text - sentences with markup
     #data = [(obj['text'], intent) for obj, intent in data]
+    print(data)
     return data
 
 

@@ -1,10 +1,12 @@
 import os
-
 import yaml
+from shutil import copyfile
+
 
 from botshot_nlu.dataset.intent import IntentDataset
+from botshot_nlu.dataset.keywords import StaticKeywordDataset
 from botshot_nlu.intent import IntentModel
-from botshot_nlu.loader import load_training_data, as_intent_pairs
+from botshot_nlu.loader import load_training_examples, as_intent_pairs
 from botshot_nlu.pipeline import Pipeline
 from botshot_nlu.utils import create_class_instance
 
@@ -25,7 +27,41 @@ class TrainingHelper:
         self.config_dir = config_dir or os.getcwd()
         self.crossvalidate = crossvalidate
 
-        sources = self.config.get('sources')
+    def start(self):
+        if self.save_path:
+            os.makedirs(self.save_path)
+            self.pipeline_data = {"pipelines": []}  # stores feature and label encoding
+        
+        if 'intent' in self.config.get("entities", {}):
+            self.train_intent()
+        self.train_entities()
+
+        if self.save_path:
+            self.copy_model_config()  # done last so that we have all training information
+
+    def copy_model_config(self):
+        # copy keyword files to prevent surprises during inference
+        # note: for dynamic keywords, take a look at the Providers API
+        sources = self.config["input"].get("keywords", [])
+        fixed_sources = []
+        keywords_dir = os.path.join(self.save_path, "keywords")
+        os.makedirs(keywords_dir, exist_ok=True)
+        for filename in sources:
+            if not os.path.isabs(filename):
+                filename = os.path.join(self.config_dir, filename)
+            path_to = os.path.join(keywords_dir, os.path.basename(filename))
+            copyfile(filename, path_to)
+            fixed_sources.append(os.path.join("keywords", os.path.basename(filename)))
+        self.config["input"]["keywords"] = fixed_sources
+
+        # copy config and pipeline files
+        with open(os.path.join(self.save_path, "config.yml"), "w") as fp:
+            yaml.dump(self.config, fp)
+        with open(os.path.join(self.save_path, "pipeline.yml"), "w") as fp:
+            yaml.dump(self.pipeline_data, fp)
+
+    def _load_intent_dataset(self) -> IntentDataset:
+        sources = self.config["input"]["examples"]
         if not sources:
             raise Exception("No source files with training examples were specified")
         elif not isinstance(sources, list):
@@ -34,45 +70,36 @@ class TrainingHelper:
             if not os.path.isabs(filename):
                 abs_filename = os.path.join(self.config_dir, filename)
                 sources[i] = abs_filename
-        self.data = load_training_data(*sources)
+        examples = load_training_examples(*sources)
+        dataset = IntentDataset(data_pairs=as_intent_pairs(examples))
+        return dataset
 
-    def start(self):
-        if 'intent' in self.config.get("entities", {}):
-            self.train_intent()
-        self.train_entities()
-
-    def _get_intent_model_dataset(self):
+    def _get_intent_model(self):
         intent_config = self.config["entities"]['intent']
 
         tokenizer = create_class_instance(intent_config.get('tokenizer'), config=intent_config)
         featurizer = create_class_instance(intent_config.get('featurizer'), config=intent_config)
         pipeline = Pipeline(tokenizer=tokenizer, featurizer=featurizer)
-
-        dataset = IntentDataset(data_pairs=as_intent_pairs(self.data))
+        
         model = create_class_instance(intent_config.get('model'), config=intent_config, pipeline=pipeline)  # type: IntentModel
-
-        return pipeline, model, dataset
+        return pipeline, model
 
     def train_intent(self):
         print("Training intent")
-        pipeline, model, dataset = self._get_intent_model_dataset()
+        dataset = self._load_intent_dataset()
+        pipeline, model = self._get_intent_model()
         if self.crossvalidate:
             self.cross_validate_intent(model, dataset)
             input('Press enter to continue')
         metrics = model.train(dataset)
         if self.save_path:
-            os.makedirs(self.save_path)
-            with open(os.path.join(self.save_path, "config.yml"), "w") as fp:
-                yaml.dump(self.config, fp)
             model.save(os.path.join(self.save_path, "intent"))
-            with open(os.path.join(self.save_path, "pipeline.yml"), "w") as fp:
-                pipeline_data = pipeline.save()
-                yaml.dump({"pipelines": {"intent": pipeline_data}}, fp)
+            self.pipeline_data['pipelines']['intent'] = pipeline.save()
         model.unload()
 
     def cross_validate_intent(self, model, dataset, k=10):
         print("Starting %d-fold cross validation" % k)
-        pipeline, model, dataset = self._get_intent_model_dataset()
+        pipeline, model = self._get_intent_model()
         accuracies = []
 
         for _ in range(k):
@@ -84,7 +111,16 @@ class TrainingHelper:
         print("Mean accuracy: %f" % (sum(accuracies) / len(accuracies)))
 
     def train_entities(self):
-        pass
+        for entity in self.config["entities"]:
+            if entity == 'intent': continue
+            entity_config = self.config['entities'][entity]
+            self.train_entity(entity, entity_config)
+    
+    def train_entity(self, entity, entity_config):
+        print("Training entity %s" % entity)
+        # TODO: choose between keywords and context
+        if 'keyword_model' in entity_config:
+            pass
 
 
 def read_training_config(filename):
@@ -109,16 +145,11 @@ class ParseHelper:
             pipeline_data = yaml.safe_load(fp)
 
         models = []
-        for entity in config["entities"]:
-            entity_config = config['entities'][entity]
-            tokenizer = create_class_instance(entity_config.get('tokenizer'), config=entity_config)
-            featurizer = create_class_instance(entity_config.get('featurizer'), config=entity_config)
-            pipeline = Pipeline(tokenizer=tokenizer, featurizer=featurizer)
-            pipeline.load(pipeline_data['pipelines'][entity])
-            model = create_class_instance(entity_config.get('model'), config=entity_config, pipeline=pipeline)  # type: IntentModel
-            model.load(os.path.join(model_path, entity))
-            print(model)
-            models.append(model)
+        if 'intent' in config['entities']:
+            intent_model = ParseHelper.load_intent_model(config, model_path, pipeline_data)
+            models.append(intent_model)
+        keyword_datasets = ParseHelper.load_keyword_datasets(config, model_path)
+        models += ParseHelper.load_keyword_models(config, keyword_datasets)
         
         return ParseHelper(config, models)
 
@@ -126,3 +157,46 @@ class ParseHelper:
         for model in self.models:
             result = model.predict(text)
             return result  # TODO
+
+    @staticmethod
+    def load_intent_model(config: dict, config_dir: str, pipeline_data):
+        entity_config = config['entities']['intent']
+        tokenizer = create_class_instance(entity_config.get('tokenizer'), config=entity_config)
+        featurizer = create_class_instance(entity_config.get('featurizer'), config=entity_config)
+        pipeline = Pipeline(tokenizer=tokenizer, featurizer=featurizer)
+        pipeline.load(pipeline_data['pipelines']['intent'])
+        model = create_class_instance(entity_config.get('model'), config=entity_config, pipeline=pipeline)  # type: IntentModel
+        model.load(os.path.join(config_dir, 'intent'))
+        return model
+
+    @staticmethod
+    def load_keyword_datasets(config: dict, config_dir: str):
+        datasets = []
+        sources = config['input'].get('keywords', [])
+        if sources:
+            if not isinstance(sources, list):
+                sources = [sources]
+            for i, filename in enumerate(sources):
+                print(filename)
+                if not os.path.isabs(filename):
+                    abs_filename = os.path.join(config_dir, filename)
+                    sources[i] = abs_filename
+            dataset = StaticKeywordDataset.load(*sources)
+            datasets.append(dataset)
+        providers = config['input'].get('providers', [])
+        # TODO: load dynamic providers (SQL, REST, custom, ...)
+        return datasets
+
+    @staticmethod
+    def load_keyword_models(config: dict, datasets: list):
+        model_classes = {}
+        models = []
+        for entity, entity_conf in config['entities'].items():
+            if entity == 'intent': continue
+            model_cls = entity_conf['keyword_model']
+            model_classes.setdefault(model_cls, []).append(entity)
+        for model_cls, entities in model_classes.items():
+            required_datasets = [dataset for dataset in datasets if any(set(entities) & dataset.get_entities())]
+            model = create_class_instance(model_cls, entities=entities, datasets=required_datasets)
+            models.append(model)
+        return models

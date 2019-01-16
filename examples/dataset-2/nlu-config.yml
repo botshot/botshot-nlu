@@ -1,8 +1,15 @@
-sources:
-#  - examples.txt
-  - expressions-1.json
+input:
+  examples:
+  #  - examples.txt
+    - expressions-1.json
+  keywords:
+  - keywords.yml
+  providers:
+
 entities:
-  intent:
-    model: botshot_nlu.intent.neural_net_model.NeuralNetModel
-    tokenizer: botshot_nlu.tokenizer.whitespace.WhitespaceTokenizer
-    featurizer: botshot_nlu.pipeline.featurizer.BagOfWordsFeaturizer
+  #intent:
+  #  model: botshot_nlu.intent.neural_net_model.NeuralNetModel
+  #  tokenizer: botshot_nlu.tokenizer.whitespace.WhitespaceTokenizer
+  #  featurizer: botshot_nlu.pipeline.featurizer.BagOfWordsFeaturizer
+  course:
+    keyword_model: botshot_nlu.keywords.trie.TrieKeywordExtractor
