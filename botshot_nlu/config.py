@@ -6,7 +6,7 @@ from shutil import copyfile
 from botshot_nlu.dataset.intent import IntentDataset
 from botshot_nlu.dataset.keywords import StaticKeywordDataset
 from botshot_nlu.intent import IntentModel
-from botshot_nlu.loader import load_training_examples, as_intent_pairs
+from botshot_nlu.loader import load_training_examples, as_intent_pairs, as_entity_keywords
 from botshot_nlu.pipeline import Pipeline
 from botshot_nlu.utils import create_class_instance
 
@@ -52,6 +52,17 @@ class TrainingHelper:
             path_to = os.path.join(keywords_dir, os.path.basename(filename))
             copyfile(filename, path_to)
             fixed_sources.append(os.path.join("keywords", os.path.basename(filename)))
+        
+        if self.config.get("keywords_from_examples"):
+            # entities from examples will be converted to keywords, useful when importing from Wit.ai
+            examples = self._get_training_examples()
+            keywords = as_entity_keywords(examples)
+            path_to = os.path.join(keywords_dir, "keywords_from_examples.yml")
+            with open(path_to, "w") as fp:
+                yaml.dump({"entities": keywords}, fp)
+            fixed_sources.append(os.path.join("keywords", "keywords_from_examples.yml"))
+
+        # update new config file to point to correct (relative!) paths
         self.config["input"]["keywords"] = fixed_sources
 
         # copy config and pipeline files
@@ -60,8 +71,8 @@ class TrainingHelper:
         with open(os.path.join(self.save_path, "pipeline.yml"), "w") as fp:
             yaml.dump(self.pipeline_data, fp)
 
-    def _load_intent_dataset(self) -> IntentDataset:
-        sources = self.config["input"]["examples"]
+    def _get_training_examples(self) -> list:
+        sources = self.config["input"]["examples"].copy()
         if not sources:
             raise Exception("No source files with training examples were specified")
         elif not isinstance(sources, list):
@@ -71,6 +82,10 @@ class TrainingHelper:
                 abs_filename = os.path.join(self.config_dir, filename)
                 sources[i] = abs_filename
         examples = load_training_examples(*sources)
+        return examples
+
+    def _load_intent_dataset(self) -> IntentDataset:
+        examples = self._get_training_examples()
         dataset = IntentDataset(data_pairs=as_intent_pairs(examples))
         return dataset
 
@@ -174,6 +189,8 @@ class ParseHelper:
     @staticmethod
     def load_keyword_datasets(config: dict, config_dir: str):
         datasets = []
+
+        # load keyword files
         sources = config['input'].get('keywords', [])
         if sources:
             if not isinstance(sources, list):
@@ -186,6 +203,7 @@ class ParseHelper:
             dataset = StaticKeywordDataset.load(*sources)
             datasets.append(dataset)
         
+        # load dynamic providers
         providers = config['input'].get('providers', [])
         for item in providers:
             if isinstance(item, str):
@@ -201,6 +219,8 @@ class ParseHelper:
                     datasets.append(provider)
             else:
                 raise Exception("Providers config is malformed")
+        
+        # load from (intent-)examples files
 
         return datasets
 
@@ -220,5 +240,4 @@ class ParseHelper:
             required_datasets = [dataset for dataset in datasets if any(set(entities) & dataset.get_entities())]
             model = create_class_instance(model_cls, config=model_spec, entities=entities, datasets=required_datasets)
             models.append(model)
-        print(models)
         return models

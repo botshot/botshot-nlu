@@ -53,14 +53,10 @@ def _read_sentences_file(filename):
         current_intent = None
 
         for line in fp:
-
-            split_comments = re.split("(?:[^\\\\]|^)#", line)
+            split_comments = re.split("(?:[^\\\\]|^)#", line)  # strip comments from line
             line = split_comments[0].strip()
 
-            #assert line[-1] == '\n'
-            #line = line[:-1]
-
-            if re.match("@[^ ]+", line):
+            if re.match("@[^ ]+", line):  # intent specification in beginning of line
                 matches = line.split(" ", maxsplit=1)
                 intent = matches[0][1:]
                 if len(matches) > 1 and matches[1].strip():
@@ -68,27 +64,22 @@ def _read_sentences_file(filename):
                 else:
                     current_intent = intent
                     continue
-
-            else:
+            else:                         # no intent specification, use previous intent
                 if current_intent is None:
-                    print(line)
-                    raise Exception("First line must specify intent")
+                    raise Exception("In file %s: first line must specify intent" % filename)
                 intent = current_intent
 
-            if not line.strip():
-                continue  # empty line
-
-            if line[-1] == '\\':
+            if not line.strip():    # empty line
+                continue
+            elif line[-1] == '\\':  # text continues in next line
                 text += line[:-1]
-                # line continues
-            else:
+            else:  # line has ended, add it to training examples
                 text += line
-                print(intent)
                 intent_map.setdefault(intent, []).append(text.replace("\\", ""))
                 text = ""
 
         if text:
-            raise Exception("Unfinished example")
+            raise Exception("Unfinished line in file %s" % filename)
 
     return [(example, intent) for (intent, examples) in intent_map.items() for example in examples]
 
@@ -121,11 +112,10 @@ def load_training_examples(*filenames):
         else:
             data += _load_sentences(filename)  # text - sentences with markup
     #data = [(obj['text'], intent) for obj, intent in data]
-    print(data)
     return data
 
 
-def as_intent_pairs(data):
+def as_intent_pairs(data) -> list:
     pairs = []
     for obj in data:
         if not obj.get('text'):
@@ -139,3 +129,20 @@ def as_intent_pairs(data):
             continue
         pairs.append((obj.get("text"), intent))
     return pairs
+
+def as_entity_keywords(data) -> dict:
+    entities = {}
+    for obj in data:
+        text = obj.get('text')
+        if not text: continue
+        for entity_obj in obj.get("entities", []):
+            entity = entity_obj.get('entity')
+            if entity == 'intent': continue
+            value = entity_obj.get('value')
+            start = entity_obj.get('start', 0)
+            end = entity_obj.get('end', len(text))
+            entities.setdefault(entity, {}).setdefault(value, []).append(text[start:end])
+    
+    for entity, items in entities.items():
+        entities[entity] = [{label: expressions} for label, expressions in items.items()]
+    return entities

@@ -202,5 +202,5 @@ class NeuralNetModel(IntentModel):
         probs = self.session.run(self.probabilities, feed_dict={self.placeholder_x: input})
         prob, label = np.max(probs), np.argmax(probs)
         
-        label = self.pipeline.decode_labels([label])
+        label = self.pipeline.decode_labels([label])[0]
         return {"intent": [{"value": label, "confidence": float(prob)}]}
