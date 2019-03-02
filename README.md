@@ -1,4 +1,4 @@
-# golm-nlu
+# Botshot NLU
 
 A NLU library for chatbots.
 
@@ -23,7 +23,7 @@ red apples
 {'intent': [{'value': [None], 'confidence': 0.7010939121246338}], 'color': [{'value': 'red', 'similar_to': 'red', 'confidence': 1.0}], 'fruit': [{'value': 'apples', 'similar_to': 'apple', 'confidence': 0.8046471605767275}]}
 ```
 
-## Running as server
+## Running as a server
 You will need a web server like `gunicorn`.
 ```
 gunicorn 'botshot_nlu.server.api("model_dir")'
