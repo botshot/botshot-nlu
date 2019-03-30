@@ -26,7 +26,7 @@ red apples
 ## Running as a server
 You will need a web server like `gunicorn`.
 ```
-gunicorn 'botshot_nlu.server.api("model_dir")'
+gunicorn 'botshot_nlu.server:api("model_dir")'
 ```
 Then you can call for example `http://localhost:8000/parse?text=Hello world`.
 
