@@ -13,7 +13,7 @@ from botshot_nlu.utils import create_class_instance
 
 class TrainingHelper:
 
-    def __init__(self, config, entities=None, save_path=None, config_dir=None, crossvalidate=False):
+    def __init__(self, config, entities=None, save_path=None, config_dir=None, crossvalidate=False, training_examples=None, testing_examples=None):
         if not isinstance(config, dict):
             raise Exception("Config must be a dict")
         if not save_path:
@@ -26,6 +26,8 @@ class TrainingHelper:
         self.save_path = save_path
         self.config_dir = config_dir or os.getcwd()
         self.crossvalidate = crossvalidate
+        self.training_examples = training_examples
+        self.testing_examples = testing_examples
 
     def start(self):
         if self.save_path:
@@ -72,6 +74,9 @@ class TrainingHelper:
             yaml.dump(self.pipeline_data, fp)
 
     def _get_training_examples(self) -> list:
+        if self.training_examples:
+            return load_training_examples(self.training_examples)
+        
         sources = self.config["input"]["examples"].copy()
         if not sources:
             raise Exception("No source files with training examples were specified")
@@ -107,6 +112,13 @@ class TrainingHelper:
             self.cross_validate_intent(model, dataset)
             input('Press enter to continue')
         metrics = model.train(dataset)
+
+        if self.testing_examples:
+            testing_examples = load_training_examples(self.testing_examples)
+            dataset = IntentDataset(data_pairs=as_intent_pairs(testing_examples))
+            test_metrics = model.test(dataset)
+            print("Testing metrics:", test_metrics)
+
         if self.save_path:
             model.save(os.path.join(self.save_path, "intent"))
             self.pipeline_data['pipelines']['intent'] = pipeline.save()
