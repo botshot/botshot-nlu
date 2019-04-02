@@ -12,6 +12,7 @@ class BagOfWordsFeaturizer(PipelineComponent):
         self.unk = self.config.get("unk_token", "<UNK>")
         self.count = self.config.get("bag_of_words_count", False)
         self.limit = self.config.get("bag_of_words_limit")  # TODO implement self.counts then drop OR add stopwords to pipeline
+        self.lowercase = self.config.get("lowercase", True)
         if self.unk:
             self._add_token(self.unk)
 
@@ -29,7 +30,6 @@ class BagOfWordsFeaturizer(PipelineComponent):
         return len(self.vocab)
 
     def _add_token(self, token):
-
         if token in self.word2idx:
             raise KeyError("Token {} was already added".format(token))
 
@@ -40,6 +40,8 @@ class BagOfWordsFeaturizer(PipelineComponent):
 
     def _add(self, sentence):
         for word in sentence:
+            if self.lowercase:
+                word = word.lower()
             if word not in self.word2idx:
                 self._add_token(word)
 
@@ -50,6 +52,8 @@ class BagOfWordsFeaturizer(PipelineComponent):
     def get(self, sentence):
         bow = [0.] * len(self.vocab)
         for token in sentence:
+            if self.lowercase:
+                token = token.lower()
 
             if token in self.word2idx:
                 i = self.word2idx[token]
