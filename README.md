@@ -1,17 +1,17 @@
 # Botshot NLU
 
-A NLU library for chatbots.
+A tiny NLU wrapper/library for Botshot.
 
 ## Training
 To train your model, you will need a `nlu_config.yml` file and some training examples.
 ```
-python -m botshot_nlu.cli train --config examples/dataset-2/nlu-config.yml --model-path model
+bots-nlu train --config examples/dataset-2/nlu-config.yml --model-path model
 ```
 
 ## Parsing from CLI
 To test your NLU model, you can run:
 ```
-python -m botshot_nlu.cli parse --model-path model
+bots-nlu parse --model-path model
 ```
 Then you can pass sentences from stdin.
 ```
