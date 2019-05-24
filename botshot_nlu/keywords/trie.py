@@ -22,6 +22,8 @@ class TrieKeywordExtractor(KeywordExtractor):
                     for label, expressions in value.items():
                         for expression in expressions:
                             data_tuples.append((expression, label, entity))
+                else:
+                    print("Unsupported entity value", type(values))
         return data_tuples
 
     def update(self, data):

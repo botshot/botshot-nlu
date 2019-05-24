@@ -19,6 +19,9 @@ def start_training(args):
 
 
 def start_parse(args):
+    if not args.model_path:
+        print("Please provide a model path")
+        exit(1)
     helper = ParseHelper.load(args.model_path)
     print("Enter query: (exit with Ctrl+D)")
     for line in sys.stdin:
