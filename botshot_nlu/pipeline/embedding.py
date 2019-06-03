@@ -33,6 +33,10 @@ class Embedding:
         self.cache = {}
         self.recent = []
 
+    def __del__(self):
+        if hasattr(self, "fp") and self.fp:
+            self.fp.close()
+
     def cache_positions(self):
 
         self.fp.seek(0)

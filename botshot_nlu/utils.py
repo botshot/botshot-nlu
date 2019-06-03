@@ -1,5 +1,7 @@
 import importlib
 
+from botshot_nlu.pipeline import Pipeline
+
 
 def create_class_instance(cls: str, *args, **kwargs):
     # TODO: always return same object for same specification
@@ -19,3 +21,12 @@ def create_class_instance(cls: str, *args, **kwargs):
 def get_default_tokenizer():
     from botshot_nlu.tokenizer.whitespace import WhitespaceTokenizer
     return WhitespaceTokenizer(config=None)
+
+
+def create_pipeline(components: list, config: dict):
+    objects = []
+    for component in components:
+        component = create_class_instance(component, config=config)
+        objects.append(component)
+    pipeline = Pipeline(*objects)
+    return pipeline

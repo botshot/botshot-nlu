@@ -4,12 +4,12 @@ from . import KeywordExtractor
 
 class TrieKeywordExtractor(KeywordExtractor):
 
-    def __init__(self, config, entities, datasets):
+    def __init__(self, config, entities, datasets, pipeline, resources):
         if 'tokenizer' in config:
             self.tokenizer = utils.create_class_instance(config['tokenizer'], config=None)
         else:
             self.tokenizer = utils.get_default_tokenizer()
-        super().__init__(config, entities, datasets)
+        super().__init__(config, entities, datasets, pipeline, resources)
         # TODO: configurable tokenizer + stemmer + other preprocessing
     
     def _reformat(self, data):
@@ -33,7 +33,8 @@ class TrieKeywordExtractor(KeywordExtractor):
         for expression, label, entity in data:
             # expression = unidecode.unidecode(expression)
             # words = tokenize(expression, self.should_stem, language=self.language)
-            words = self.tokenizer.tokenize(expression.lower())
+            # words = self.tokenizer.tokenize(expression.lower())
+            words = self.pipeline.transform([expression])[0]
 
             first_word = words[0]
             chars = list(first_word)
@@ -55,7 +56,8 @@ class TrieKeywordExtractor(KeywordExtractor):
         extracted = {}
         # text = unidecode.unidecode(text)
         # words = tokenize(text, self.should_stem, self.language)
-        utterance = self.tokenizer.tokenize(utterance)
+        # utterance = self.tokenizer.tokenize(utterance)
+        utterance = self.pipeline.transform([utterance])[0]
 
         for idx, word in enumerate(utterance):
             word = word.lower()  # TODO move elsewhere

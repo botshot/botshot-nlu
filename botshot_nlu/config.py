@@ -2,7 +2,7 @@ import os
 import yaml
 from shutil import copyfile
 
-
+from botshot_nlu import utils
 from botshot_nlu.dataset.intent import IntentDataset
 from botshot_nlu.dataset.keywords import StaticKeywordDataset
 from botshot_nlu.intent import IntentModel
@@ -96,11 +96,7 @@ class TrainingHelper:
 
     def _get_intent_model(self):
         intent_config = self.config["entities"]['intent']
-
-        tokenizer = create_class_instance(intent_config.get('tokenizer'), config=intent_config)
-        featurizer = create_class_instance(intent_config.get('featurizer'), config=intent_config)
-        pipeline = Pipeline(tokenizer=tokenizer, featurizer=featurizer)
-        
+        pipeline = utils.create_pipeline(intent_config['pipeline'], intent_config)
         model = create_class_instance(intent_config.get('model'), config=intent_config, pipeline=pipeline)  # type: IntentModel
         return pipeline, model
 
@@ -190,9 +186,7 @@ class ParseHelper:
     @staticmethod
     def load_intent_model(config: dict, config_dir: str, pipeline_data):
         entity_config = config['entities']['intent']
-        tokenizer = create_class_instance(entity_config.get('tokenizer'), config=entity_config)
-        featurizer = create_class_instance(entity_config.get('featurizer'), config=entity_config)
-        pipeline = Pipeline(tokenizer=tokenizer, featurizer=featurizer)
+        pipeline = utils.create_pipeline(entity_config['pipeline'], entity_config)
         pipeline.load(pipeline_data['pipelines']['intent'])
         model = create_class_instance(entity_config.get('model'), config=entity_config, pipeline=pipeline)  # type: IntentModel
         model.load(os.path.join(config_dir, 'intent'))
@@ -241,15 +235,38 @@ class ParseHelper:
         models_spec = {}
         models = []
         for entity, entity_conf in config['entities'].items():
-            if entity == 'intent': continue
             keywords_config = entity_conf.get('keywords')
             if keywords_config:
-                key = frozenset(keywords_config.items())
+                key = yaml.dump(keywords_config)
                 models_spec.setdefault(key, []).append(entity)
+        # all different (model, params) configurations
         for model_spec, entities in models_spec.items():
-            model_spec = dict(model_spec)
+            model_spec = yaml.load(model_spec)
             model_cls = model_spec['model']
             required_datasets = [dataset for dataset in datasets if any(set(entities) & dataset.get_entities())]
-            model = create_class_instance(model_cls, config=model_spec, entities=entities, datasets=required_datasets)
+            all_data = []
+            for dataset in required_datasets:
+                for kw in dataset.get_data(entities).values():
+                    all_data += _get_examples(kw)
+            pipeline = utils.create_pipeline(model_spec['pipeline'], model_spec)
+            pipeline.fit(all_data, y=None)
+            model = utils.create_class_instance(model_cls, config=model_spec, entities=entities, datasets=required_datasets, pipeline=pipeline, resources=None)  # FIXME
             models.append(model)
         return models
+
+
+def _get_examples(item):
+    if isinstance(item, str):
+        return [item]
+    elif isinstance(item, dict):
+        examples = []
+        for value in item.values():
+            examples += _get_examples(value)
+        return examples
+    elif isinstance(item, list):
+        examples = []
+        for i in item:
+            print(_get_examples(i))
+            examples += _get_examples(i)
+        return examples
+    return []
