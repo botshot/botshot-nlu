@@ -2,7 +2,7 @@ import os
 import yaml
 from shutil import copyfile
 
-from botshot_nlu import utils
+from botshot_nlu import utils, loader
 from botshot_nlu.dataset.intent import IntentDataset
 from botshot_nlu.dataset.keywords import StaticKeywordDataset
 from botshot_nlu.intent import IntentModel
@@ -34,9 +34,10 @@ class TrainingHelper:
             os.makedirs(self.save_path)
             self.pipeline_data = {"pipelines": {}}  # stores feature and label encoding
         
-        if 'intent' in self.config.get("entities", {}):
+        if 'intent' in self.config:
             self.train_intent()
-        self.train_entities()
+        if 'entities' in self.config:
+            self.train_entities()
 
         if self.save_path:
             self.copy_model_config()  # done last so that we have all training information
@@ -74,55 +75,67 @@ class TrainingHelper:
             yaml.dump(self.pipeline_data, fp)
 
     def _get_training_examples(self) -> list:
+        # if training examples were explicitly specified, load those
         if self.training_examples:
-            return load_training_examples(self.training_examples)
-        
+            return loader.read_datasets(self.training_examples)
+        # otherwise, find all sources in config file
         sources = self.config["input"]["examples"].copy()
         if not sources:
             raise Exception("No source files with training examples were specified")
         elif not isinstance(sources, list):
             sources = [sources]
+        # convert paths relative to config directory to absolute paths
         for i, filename in enumerate(sources):
             if not os.path.isabs(filename):
                 abs_filename = os.path.join(self.config_dir, filename)
                 sources[i] = abs_filename
-        examples = load_training_examples(*sources)
-        return examples
+        return loader.read_datasets(*sources)
 
     def _load_intent_dataset(self) -> IntentDataset:
         examples = self._get_training_examples()
-        dataset = IntentDataset(data_pairs=as_intent_pairs(examples))
+        dataset = IntentDataset(data_pairs=examples)
         return dataset
 
-    def _get_intent_model(self):
+    def _get_intent_models(self):
         intent_config = self.config["entities"]['intent']
-        pipeline = utils.create_pipeline(intent_config['pipeline'], intent_config)
-        model = create_class_instance(intent_config.get('model'), config=intent_config, pipeline=pipeline)  # type: IntentModel
-        return pipeline, model
+        pipeline = utils.create_pipeline(intent_config['pipeline'], intent_config.get('add', []), intent_config)
+        model = ner_model = None
+        if intent_config.get('model'):
+            model = create_class_instance(intent_config.get('model'), config=intent_config, pipeline=pipeline)  # type: IntentModel
+        if intent_config.get('ner-model'):
+            ner_model = create_class_instance(intent_config.get('ner-model'), config=intent_config, pipeline=pipeline)  # type: EntityModel
+        return pipeline, model, ner_model
 
     def train_intent(self):
         print("Training intent")
-        dataset = self._load_intent_dataset()
-        pipeline, model = self._get_intent_model()
+        dataset = self._load_intent_dataset()#.with_negative_sample(size=0.5)
+        models = load_intent_models(self.config)
         if self.crossvalidate:
+            raise NotImplemented()
             self.cross_validate_intent(model, dataset)
             input('Press enter to continue')
-        metrics = model.train(dataset)
+
+        for model in models:
+            metrics = model.train(dataset)
 
         if self.testing_examples:
             testing_examples = load_training_examples(self.testing_examples)
             dataset = IntentDataset(data_pairs=as_intent_pairs(testing_examples))
-            test_metrics = model.test(dataset)
-            print("Testing metrics:", test_metrics)
+            for model in models:
+                metrics = model.test(dataset)
+                print("Metrics for %s:" % model.__class__.__name__, metrics)
 
         if self.save_path:
-            model.save(os.path.join(self.save_path, "intent"))
-            self.pipeline_data['pipelines']['intent'] = pipeline.save()
-        model.unload()
+            pipeline_data = {"pipelines": {}}
+            for i, model in enumerate(models):
+                model.save(os.path.join(self.save_path, "intent_%d" % i))
+                pipeline_data['pipelines']['intent_%d' % i] = model.pipeline.save()
+                model.unload()
+            self.pipeline_data = pipeline_data
 
     def cross_validate_intent(self, model, dataset, k=10):
         print("Starting %d-fold cross validation" % k)
-        pipeline, model = self._get_intent_model()
+        pipeline, model, ner_model = self._get_intent_model()
         accuracies = []
 
         for _ in range(k):
@@ -168,12 +181,15 @@ class ParseHelper:
             pipeline_data = yaml.safe_load(fp)
 
         models = []
-        if 'intent' in config['entities']:
-            intent_model = ParseHelper.load_intent_model(config, model_path, pipeline_data)
-            models.append(intent_model)
-        keyword_datasets = ParseHelper.load_keyword_datasets(config, model_path)
-        models += ParseHelper.load_keyword_models(config, keyword_datasets)
-        
+        if 'intent' in config:
+            models += load_intent_models(config, model_path, pipeline_data)
+        if 'entities' in config:
+            keyword_datasets = ParseHelper.load_keyword_datasets(config, model_path)
+            models += ParseHelper.load_keyword_models(config, keyword_datasets)
+
+        if len(models) <= 0:
+            raise Exception("No models were loaded")
+
         return ParseHelper(config, models)
 
     def parse(self, text):
@@ -182,15 +198,6 @@ class ParseHelper:
             result = model.predict(text)
             results.update(result)
         return results
-
-    @staticmethod
-    def load_intent_model(config: dict, config_dir: str, pipeline_data):
-        entity_config = config['entities']['intent']
-        pipeline = utils.create_pipeline(entity_config['pipeline'], entity_config)
-        pipeline.load(pipeline_data['pipelines']['intent'])
-        model = create_class_instance(entity_config.get('model'), config=entity_config, pipeline=pipeline)  # type: IntentModel
-        model.load(os.path.join(config_dir, 'intent'))
-        return model
 
     @staticmethod
     def load_keyword_datasets(config: dict, config_dir: str):
@@ -248,7 +255,7 @@ class ParseHelper:
             for dataset in required_datasets:
                 for kw in dataset.get_data(entities).values():
                     all_data += _get_examples(kw)
-            pipeline = utils.create_pipeline(model_spec['pipeline'], model_spec)
+            pipeline = utils.create_pipeline(model_spec['pipeline'], intent_config.get('add', []), model_spec)
             pipeline.fit(all_data, y=None)
             model = utils.create_class_instance(model_cls, config=model_spec, entities=entities, datasets=required_datasets, pipeline=pipeline, resources=None)  # FIXME
             models.append(model)
@@ -270,3 +277,27 @@ def _get_examples(item):
             examples += _get_examples(i)
         return examples
     return []
+
+
+def get_model_configs(config: dict):
+    if 'intent' not in config:
+        raise Exception("Intent model not defined")
+    if isinstance(config['intent'], dict):
+        return [config['intent']]
+    elif isinstance(config['intent'], list):
+        return config['intent']
+    raise Exception("Intent config is None")
+
+
+def load_intent_models(config: dict, config_dir=None, pipeline_data=None):
+    models = []
+    for i, cfg in enumerate(get_model_configs(config)):
+        print(i, cfg)
+        pipeline = utils.create_pipeline(cfg['pipeline'], cfg.get('add', []), cfg)
+        if pipeline_data is not None:
+            pipeline.load(pipeline_data['pipelines']['intent_%d' % i])
+        model = create_class_instance(cfg['model'], config=cfg, pipeline=pipeline)  # type: IntentModel
+        if config_dir is not None:
+            model.load(os.path.join(config_dir, 'intent_%d' % i))
+        models.append(model)
+    return models

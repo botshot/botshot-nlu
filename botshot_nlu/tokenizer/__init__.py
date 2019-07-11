@@ -1,9 +1,12 @@
-from botshot_nlu.pipeline import PipelineComponent
+from botshot_nlu.pipeline import PipelineComponent, InputType
 
 
 class Tokenizer(PipelineComponent):
 
-    def fit(self, data):
+    source = InputType.TEXT
+    target = InputType.TOKENS
+
+    def fit(self, data, labels=None, entities=None):
         pass
 
     def load(self, from_data):
@@ -15,5 +18,5 @@ class Tokenizer(PipelineComponent):
     def feature_dim(self):
         return None
 
-    def tokenize(self, sentence):
+    def tokenize(self, sentence, labels=None, entities=None):
         pass

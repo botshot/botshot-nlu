@@ -5,7 +5,9 @@ from collections import namedtuple
 from botshot_nlu.dataset.intent import IntentDataset
 
 
-Metrics = namedtuple("Metrics", ("loss", "accuracy", "precision", "recall", "f1"))
+_metrics = ("loss", "accuracy", "precision", "recall", "f1")
+Metrics = namedtuple("Metrics", _metrics)
+Metrics.__new__.__defaults__ = (None,) * len(_metrics)
 
 
 class IntentModel(ABC):

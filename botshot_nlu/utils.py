@@ -23,10 +23,10 @@ def get_default_tokenizer():
     return WhitespaceTokenizer(config=None)
 
 
-def create_pipeline(components: list, config: dict):
+def create_pipeline(components: list, add:list, config: dict):
     objects = []
     for component in components:
         component = create_class_instance(component, config=config)
         objects.append(component)
-    pipeline = Pipeline(*objects)
+    pipeline = Pipeline(*objects, add=[create_class_instance(x, config) for x in add])
     return pipeline

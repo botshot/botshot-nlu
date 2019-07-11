@@ -4,3 +4,4 @@ scipy
 tensorflow
 pyyaml
 argparse
+symspellpy

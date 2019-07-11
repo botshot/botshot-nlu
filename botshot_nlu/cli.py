@@ -25,6 +25,9 @@ def start_parse(args):
     helper = ParseHelper.load(args.model_path)
     print("Enter query: (exit with Ctrl+D)")
     for line in sys.stdin:
+        if line.endswith("\n"):
+            line = line[:-1]
+        print(list(line))
         output = helper.parse(line)
         print(output)
 
