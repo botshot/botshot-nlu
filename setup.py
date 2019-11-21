@@ -9,10 +9,10 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-# with open("botshot/version.py") as fp:
-#     version_dict = {}
-#     exec(fp.read(), version_dict)
-#     __version__ = version_dict['__version__']
+with open("botshot_nlu/version.py") as fp:
+    version_dict = {}
+    exec(fp.read(), version_dict)
+    __version__ = version_dict['__version__']
 
 with open(os.path.join(os.path.dirname(__file__), 'requirements.txt')) as fp:
     requirements = fp.read().split("\n")
@@ -20,7 +20,7 @@ with open(os.path.join(os.path.dirname(__file__), 'requirements.txt')) as fp:
 
 setup(
     name='botshot-nlu',
-    version="0.0.1-alpha",
+    version=__version__,
     packages=find_packages(),
     include_package_data=True,
     description='A tiny NLU wrapper/library for Botshot.',
