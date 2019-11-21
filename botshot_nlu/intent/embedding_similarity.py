@@ -16,6 +16,7 @@ class EmbeddingSimilarityModel(IntentModel):
 
     MAX_TOKENS = 20
     FEATURE_DIM = 300
+    MIN_CONFIDENCE = 0.3
 
     def __init__(self, config, pipeline):
         super().__init__(config, pipeline)
@@ -134,4 +135,6 @@ class EmbeddingSimilarityModel(IntentModel):
         prob = sim.max().item()
         l_i = sim.argmax().item()
         label = self.intent_bin.i2l[l_i]
+        if float(prob) < self.MIN_CONFIDENCE:
+            return {}
         return {"intent": [{"value": label, "confidence": float(prob)}]}
