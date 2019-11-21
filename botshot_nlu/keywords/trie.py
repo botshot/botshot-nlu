@@ -34,7 +34,8 @@ class TrieKeywordExtractor(KeywordExtractor):
             # expression = unidecode.unidecode(expression)
             # words = tokenize(expression, self.should_stem, language=self.language)
             # words = self.tokenizer.tokenize(expression.lower())
-            words = self.pipeline.transform([expression])[0]
+            words, _, _ = self.pipeline.transform([expression])
+            words = words[0]
 
             first_word = words[0]
             chars = list(first_word)
@@ -51,6 +52,18 @@ class TrieKeywordExtractor(KeywordExtractor):
             })
 
         self.trie = root_state
+    
+    #def save(self, path: str):
+    #    super().save(path)
+    #    save_path = os.path.join(path, "trie.json")
+    #    with open(save_path, "w") as fp:
+    #        json.dump(self.trie, fp)
+
+    #def load(self, path: str):
+    #    super().load(path)
+    #    save_path = os.path.join(path, "trie.json")
+    #    with open(save_path, "r") as fp:
+    #        self.trie = json.load(fp)
 
     def predict(self, utterance: str):
         extracted = {}
@@ -76,5 +89,4 @@ class TrieKeywordExtractor(KeywordExtractor):
                         entity = output['entity']
                         label = output['label']
                         extracted.setdefault(entity, []).append({"value": label})
-
         return extracted
