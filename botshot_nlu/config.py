@@ -19,7 +19,8 @@ class TrainingHelper:
         if not save_path:
             print("Warning: Save path not provided, model won't be saved!")
         elif os.path.exists(save_path):
-            raise Exception("Save path {} already exists!".format(save_path))
+            pass
+            # raise Exception("Save path {} already exists!".format(save_path))
 
         self.config = config
         self.entities = entities or list(self.config.get("entities", {}).keys())
@@ -31,7 +32,8 @@ class TrainingHelper:
 
     def start(self):
         if self.save_path:
-            os.makedirs(self.save_path)
+            try: os.makedirs(self.save_path) 
+            except: pass
             self.pipeline_data = {"pipelines": {}}  # stores feature and label encoding
         
         if 'intent' in self.config:
@@ -241,6 +243,7 @@ class ParseHelper:
     def load_keyword_models(config: dict, datasets: list):
         models_spec = {}
         models = []
+        intent_config = config['intent']
         for entity, entity_conf in config['entities'].items():
             keywords_config = entity_conf.get('keywords')
             if keywords_config:
@@ -256,7 +259,7 @@ class ParseHelper:
                 for kw in dataset.get_data(entities).values():
                     all_data += _get_examples(kw)
             pipeline = utils.create_pipeline(model_spec['pipeline'], intent_config.get('add', []), model_spec)
-            pipeline.fit(all_data, y=None)
+            pipeline.fit(all_data, y=None, z=None)
             model = utils.create_class_instance(model_cls, config=model_spec, entities=entities, datasets=required_datasets, pipeline=pipeline, resources=None)  # FIXME
             models.append(model)
         return models

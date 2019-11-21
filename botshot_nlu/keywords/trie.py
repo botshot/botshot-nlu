@@ -57,9 +57,8 @@ class TrieKeywordExtractor(KeywordExtractor):
         # text = unidecode.unidecode(text)
         # words = tokenize(text, self.should_stem, self.language)
         # utterance = self.tokenizer.tokenize(utterance)
-        utterance = self.pipeline.transform([utterance])[0]
-
-        for idx, word in enumerate(utterance):
+        x, _, _ = self.pipeline.transform([utterance])
+        for idx, word in enumerate(x[0]):
             word = word.lower()  # TODO move elsewhere
             state = self.trie
             chars = list(word)

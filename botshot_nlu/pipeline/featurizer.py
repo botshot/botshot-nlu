@@ -197,7 +197,7 @@ class EmbeddingCentroidFeaturizer(PipelineComponent):
         pass
 
 
-class SequentialBagOfWords(BagOfWords):
+class SequentialOneHotBagOfWords(BagOfWords):
 
     MAX_TOKENS = 20  # TODO: from config
 
@@ -217,6 +217,34 @@ class SequentialBagOfWords(BagOfWords):
                     k = self.word2idx[self.unk]
                 else: continue
                 features[i, j, k] = 1.0
+
+        return features, labels, entities
+
+    def get(self, sentence):
+        return self.transform([sentence], None, None)[0][0]
+
+
+
+class SequentialBagOfWords(BagOfWords):
+
+    MAX_TOKENS = 20  # TODO: from config
+
+    source = InputType.TOKENS
+    target = InputType.VECTOR_SEQUENCE
+
+    def transform(self, sentences, labels, entities):
+        features = np.zeros([len(sentences), self.MAX_TOKENS])
+
+        for i, sent in enumerate(sentences):
+            sent = sent[:self.MAX_TOKENS]
+            for j, token in enumerate(sent):
+                token = token.lower() if self.lowercase else token
+                if token in self.word2idx:
+                    k = self.word2idx[token]
+                elif self.unk:
+                    k = self.word2idx[self.unk]
+                else: continue
+                features[i, j] = k
 
         return features, labels, entities
 

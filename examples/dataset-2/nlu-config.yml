@@ -1,7 +1,7 @@
 input:
   examples:
-  #  - examples.txt
-    - expressions-1.json
+   - examples.txt
+    # - expressions-1.json
   keywords:
   - keywords.yml
   providers:
@@ -12,11 +12,14 @@ input:
 
 keywords_from_examples: true
 
+intent:
+  model: botshot_nlu.intent.neural_net_model.NeuralNetModel
+  pipeline:
+  - botshot_nlu.tokenizer.whitespace.WhitespaceTokenizer
+  - botshot_nlu.pipeline.featurizer.BagOfWords
+
 entities:
-  intent:
-    model: botshot_nlu.intent.neural_net_model.NeuralNetModel
-    tokenizer: botshot_nlu.tokenizer.whitespace.WhitespaceTokenizer
-    featurizer: botshot_nlu.pipeline.featurizer.BagOfWordsFeaturizer
+
   course:
     keywords:
       model: botshot_nlu.keywords.trie.TrieKeywordExtractor

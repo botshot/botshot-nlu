@@ -2,6 +2,7 @@ falcon>=1.4.1
 numpy
 scipy
 tensorflow
+torch
 pyyaml
 argparse
 symspellpy
